@@ -15,4 +15,18 @@ final class EventScheduler
       this.pendingEvents = new HashMap<>();
       this.timeScale = timeScale;
    }
+
+    public void executeAction(Action action)
+    {
+       switch (action.kind)
+       {
+       case ACTIVITY:
+          action.executeActivityAction(this);
+          break;
+
+       case ANIMATION:
+          action.executeAnimationAction(this);
+          break;
+       }
+    }
 }
