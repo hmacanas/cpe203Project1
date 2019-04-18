@@ -73,7 +73,7 @@ public final class VirtualWorld
       long time = System.currentTimeMillis();
       if (time >= next_time)
       {
-         Functions.updateOnTime(this.scheduler, time);
+         this.scheduler.updateOnTime(time);
          next_time = time + TIMER_ACTION_PERIOD;
       }
 
@@ -109,7 +109,7 @@ public final class VirtualWorld
    public static Background createDefaultBackground(ImageStore imageStore)
    {
       return new Background(DEFAULT_IMAGE_NAME,
-         Functions.getImageList(imageStore, DEFAULT_IMAGE_NAME));
+         imageStore.getImageList(DEFAULT_IMAGE_NAME));
    }
 
    public static PImage createImageColored(int width, int height, int color)
@@ -130,7 +130,7 @@ public final class VirtualWorld
       try
       {
          Scanner in = new Scanner(new File(filename));
-         Functions.loadImages(in, imageStore, screen);
+         imageStore.loadImages(in, screen);
       }
       catch (FileNotFoundException e)
       {

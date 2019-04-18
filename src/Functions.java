@@ -97,108 +97,6 @@ final class Functions
       }
    }
 
-   public static boolean adjacent(Point p1, Point p2)
-   {
-      return (p1.x == p2.x && Math.abs(p1.y - p2.y) == 1) ||
-         (p1.y == p2.y && Math.abs(p1.x - p2.x) == 1);
-   }
-
-   public static Optional<Point> findOpenAround(WorldModel world, Point pos)
-   {
-      for (int dy = -ORE_REACH; dy <= ORE_REACH; dy++)
-      {
-         for (int dx = -ORE_REACH; dx <= ORE_REACH; dx++)
-         {
-            Point newPt = new Point(pos.x + dx, pos.y + dy);
-            if (withinBounds(world, newPt) &&
-               !isOccupied(world, newPt))
-            {
-               return Optional.of(newPt);
-            }
-         }
-      }
-
-      return Optional.empty();
-   }
-
-   public static void scheduleEvent(EventScheduler scheduler,
-      Entity entity, Action action, long afterPeriod)
-   {
-      long time = System.currentTimeMillis() +
-         (long)(afterPeriod * scheduler.timeScale);
-      Event event = new Event(action, time, entity);
-
-      scheduler.eventQueue.add(event);
-
-      // update list of pending events for the given entity
-      List<Event> pending = scheduler.pendingEvents.getOrDefault(entity,
-         new LinkedList<>());
-      pending.add(event);
-      scheduler.pendingEvents.put(entity, pending);
-   }
-
-   public static void unscheduleAllEvents(EventScheduler scheduler,
-      Entity entity)
-   {
-      List<Event> pending = scheduler.pendingEvents.remove(entity);
-
-      if (pending != null)
-      {
-         for (Event event : pending)
-         {
-            scheduler.eventQueue.remove(event);
-         }
-      }
-   }
-
-   public static void removePendingEvent(EventScheduler scheduler,
-      Event event)
-   {
-      List<Event> pending = scheduler.pendingEvents.get(event.entity);
-
-      if (pending != null)
-      {
-         pending.remove(event);
-      }
-   }
-
-   public static void updateOnTime(EventScheduler scheduler, long time)
-   {
-      while (!scheduler.eventQueue.isEmpty() &&
-         scheduler.eventQueue.peek().time < time)
-      {
-         Event next = scheduler.eventQueue.poll();
-         
-         removePendingEvent(scheduler, next);
-         
-         scheduler.executeAction(next.action);
-      }
-   }
-
-   public static List<PImage> getImageList(ImageStore imageStore, String key)
-   {
-      return imageStore.images.getOrDefault(key, imageStore.defaultImages);
-   }
-
-   public static void loadImages(Scanner in, ImageStore imageStore,
-      PApplet screen)
-   {
-      int lineNumber = 0;
-      while (in.hasNextLine())
-      {
-         try
-         {
-            processImageLine(imageStore.images, in.nextLine(), screen);
-         }
-         catch (NumberFormatException e)
-         {
-            System.out.println(String.format("Image format error on line %d",
-               lineNumber));
-         }
-         lineNumber++;
-      }
-   }
-
    public static void processImageLine(Map<String, List<PImage>> images,
       String line, PApplet screen)
    {
@@ -253,18 +151,6 @@ final class Functions
          }
       }
       img.updatePixels();
-   }
-
-   public static void shift(Viewport viewport, int col, int row)
-   {
-      viewport.col = col;
-      viewport.row = row;
-   }
-
-   public static boolean contains(Viewport viewport, Point p)
-   {
-      return p.y >= viewport.row && p.y < viewport.row + viewport.numRows &&
-         p.x >= viewport.col && p.x < viewport.col + viewport.numCols;
    }
 
    public static void load(Scanner in, WorldModel world, ImageStore imageStore)
@@ -329,7 +215,7 @@ final class Functions
             Integer.parseInt(properties[BGND_ROW]));
          String id = properties[BGND_ID];
          setBackground(world, pt,
-            new Background(id, getImageList(imageStore, id)));
+            new Background(id, imageStore.getImageList(id)));
       }
 
       return properties.length == BGND_NUM_PROPERTIES;
@@ -347,7 +233,7 @@ final class Functions
             pt,
             Integer.parseInt(properties[MINER_ACTION_PERIOD]),
             Integer.parseInt(properties[MINER_ANIMATION_PERIOD]),
-            getImageList(imageStore, MINER_KEY));
+            imageStore.getImageList(MINER_KEY));
          tryAddEntity(world, entity);
       }
 
@@ -363,7 +249,7 @@ final class Functions
             Integer.parseInt(properties[OBSTACLE_COL]),
             Integer.parseInt(properties[OBSTACLE_ROW]));
          Entity entity = createObstacle(properties[OBSTACLE_ID],
-            pt, getImageList(imageStore, OBSTACLE_KEY));
+            pt, imageStore.getImageList(OBSTACLE_KEY));
          tryAddEntity(world, entity);
       }
 
@@ -379,7 +265,7 @@ final class Functions
             Integer.parseInt(properties[ORE_ROW]));
          Entity entity = createOre(properties[ORE_ID],
             pt, Integer.parseInt(properties[ORE_ACTION_PERIOD]),
-            getImageList(imageStore, ORE_KEY));
+            imageStore.getImageList(ORE_KEY));
          tryAddEntity(world, entity);
       }
 
@@ -394,7 +280,7 @@ final class Functions
          Point pt = new Point(Integer.parseInt(properties[SMITH_COL]),
             Integer.parseInt(properties[SMITH_ROW]));
          Entity entity = createBlacksmith(properties[SMITH_ID],
-            pt, getImageList(imageStore, SMITH_KEY));
+            pt, imageStore.getImageList(SMITH_KEY));
          tryAddEntity(world, entity);
       }
 
@@ -411,7 +297,7 @@ final class Functions
          Entity entity = createVein(properties[VEIN_ID],
             pt,
             Integer.parseInt(properties[VEIN_ACTION_PERIOD]),
-            getImageList(imageStore, VEIN_KEY));
+            imageStore.getImageList(VEIN_KEY));
          tryAddEntity(world, entity);
       }
 
@@ -615,7 +501,7 @@ final class Functions
       int newRow = clamp(view.viewport.row + rowDelta, 0,
          view.world.numRows - view.viewport.numRows);
 
-      shift(view.viewport, newCol, newRow);
+      view.viewport.shift(newCol, newRow);
    }
 
    public static void drawBackground(WorldView view)
@@ -642,7 +528,7 @@ final class Functions
       {
          Point pos = entity.position;
 
-         if (contains(view.viewport, pos))
+         if (view.viewport.contains(pos))
          {
             Point viewPoint = worldToViewport(view.viewport, pos.x, pos.y);
             view.screen.image(getCurrentImage(entity),
