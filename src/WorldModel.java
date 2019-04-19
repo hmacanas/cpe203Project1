@@ -24,7 +24,156 @@ final class WorldModel
       }
    }
 
-   public void setBackgroundCell(Point pos,
+    public void load(Scanner in, ImageStore imageStore)
+    {
+       int lineNumber = 0;
+       while (in.hasNextLine())
+       {
+          try
+          {
+             if (!processLine(in.nextLine(), imageStore))
+             {
+                System.err.println(String.format("invalid entry on line %d",
+                   lineNumber));
+             }
+          }
+          catch (NumberFormatException e)
+          {
+             System.err.println(String.format("invalid entry on line %d",
+                lineNumber));
+          }
+          catch (IllegalArgumentException e)
+          {
+             System.err.println(String.format("issue on line %d: %s",
+                lineNumber, e.getMessage()));
+          }
+          lineNumber++;
+       }
+    }
+
+    public boolean processLine(String line,
+                               ImageStore imageStore)
+    {
+       String[] properties = line.split("\\s");
+       if (properties.length > 0)
+       {
+          switch (properties[Functions.PROPERTY_KEY])
+          {
+          case Functions.BGND_KEY:
+             return parseBackground(properties, imageStore);
+          case Functions.MINER_KEY:
+             return parseMiner(properties, imageStore);
+          case Functions.OBSTACLE_KEY:
+             return parseObstacle(properties, imageStore);
+          case Functions.ORE_KEY:
+             return parseOre(properties, imageStore);
+          case Functions.SMITH_KEY:
+             return parseSmith(properties, imageStore);
+          case Functions.VEIN_KEY:
+             return parseVein(properties, imageStore);
+          }
+       }
+
+       return false;
+    }
+
+    public boolean parseMiner(String[] properties,
+                              ImageStore imageStore)
+    {
+       if (properties.length == Functions.MINER_NUM_PROPERTIES)
+       {
+          Point pt = new Point(Integer.parseInt(properties[Functions.MINER_COL]),
+             Integer.parseInt(properties[Functions.MINER_ROW]));
+          Entity entity = pt.createMinerNotFull(properties[Functions.MINER_ID],
+             Integer.parseInt(properties[Functions.MINER_LIMIT]),
+                  Integer.parseInt(properties[Functions.MINER_ACTION_PERIOD]),
+             Integer.parseInt(properties[Functions.MINER_ANIMATION_PERIOD]),
+             imageStore.getImageList(Functions.MINER_KEY));
+          tryAddEntity(entity);
+       }
+
+       return properties.length == Functions.MINER_NUM_PROPERTIES;
+    }
+
+    public boolean parseVein(String[] properties,
+                             ImageStore imageStore)
+    {
+       if (properties.length == Functions.VEIN_NUM_PROPERTIES)
+       {
+          Point pt = new Point(Integer.parseInt(properties[Functions.VEIN_COL]),
+             Integer.parseInt(properties[Functions.VEIN_ROW]));
+          Entity entity = pt.createVein(properties[Functions.VEIN_ID],
+                  Integer.parseInt(properties[Functions.VEIN_ACTION_PERIOD]),
+             imageStore.getImageList(Functions.VEIN_KEY));
+          tryAddEntity(entity);
+       }
+
+       return properties.length == Functions.VEIN_NUM_PROPERTIES;
+    }
+
+    public boolean parseSmith(String[] properties,
+                              ImageStore imageStore)
+    {
+       if (properties.length == Functions.SMITH_NUM_PROPERTIES)
+       {
+          Point pt = new Point(Integer.parseInt(properties[Functions.SMITH_COL]),
+             Integer.parseInt(properties[Functions.SMITH_ROW]));
+          Entity entity = pt.createBlacksmith(properties[Functions.SMITH_ID],
+                  imageStore.getImageList(Functions.SMITH_KEY));
+          tryAddEntity(entity);
+       }
+
+       return properties.length == Functions.SMITH_NUM_PROPERTIES;
+    }
+
+    public boolean parseOre(String[] properties,
+                            ImageStore imageStore)
+    {
+       if (properties.length == Functions.ORE_NUM_PROPERTIES)
+       {
+          Point pt = new Point(Integer.parseInt(properties[Functions.ORE_COL]),
+             Integer.parseInt(properties[Functions.ORE_ROW]));
+          Entity entity = pt.createOre(properties[Functions.ORE_ID],
+                  Integer.parseInt(properties[Functions.ORE_ACTION_PERIOD]),
+             imageStore.getImageList(Functions.ORE_KEY));
+          tryAddEntity(entity);
+       }
+
+       return properties.length == Functions.ORE_NUM_PROPERTIES;
+    }
+
+    public boolean parseObstacle(String[] properties,
+                                 ImageStore imageStore)
+    {
+       if (properties.length == Functions.OBSTACLE_NUM_PROPERTIES)
+       {
+          Point pt = new Point(
+             Integer.parseInt(properties[Functions.OBSTACLE_COL]),
+             Integer.parseInt(properties[Functions.OBSTACLE_ROW]));
+          Entity entity = pt.createObstacle(properties[Functions.OBSTACLE_ID],
+                  imageStore.getImageList(Functions.OBSTACLE_KEY));
+          tryAddEntity(entity);
+       }
+
+       return properties.length == Functions.OBSTACLE_NUM_PROPERTIES;
+    }
+
+    public boolean parseBackground(String[] properties,
+                                   ImageStore imageStore)
+    {
+       if (properties.length == Functions.BGND_NUM_PROPERTIES)
+       {
+          Point pt = new Point(Integer.parseInt(properties[Functions.BGND_COL]),
+             Integer.parseInt(properties[Functions.BGND_ROW]));
+          String id = properties[Functions.BGND_ID];
+          setBackground(pt,
+             new Background(id, imageStore.getImageList(id)));
+       }
+
+       return properties.length == Functions.BGND_NUM_PROPERTIES;
+    }
+
+    public void setBackgroundCell(Point pos,
                                  Background background)
    {
       this.background[pos.y][pos.x] = background;

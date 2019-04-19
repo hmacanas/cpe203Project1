@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5232f54b-fbaa-435e-8d3c-721809adff89" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/given_uml/InitialClasses.graphml" beforeDir="false" afterPath="$PROJECT_DIR$/given_uml/InitialClasses.graphml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project1/Action.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project1/Action.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project1/Entity$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project1/Entity$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project1/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project1/Entity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project1/Functions.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project1/Functions.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project1/Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project1/Point.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project1/VirtualWorld.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project1/VirtualWorld.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project1/WorldView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project1/WorldView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Action.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Action.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Functions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Functions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Point.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/VirtualWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VirtualWorld.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WorldModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WorldModel.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,20 +19,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Functions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="308" selection-start-line="308" selection-end-line="308" />
+            <state relative-caret-position="165">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Point.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="24" column="17" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
+            <state relative-caret-position="254">
+              <caret line="29" column="4" lean-forward="true" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -68,8 +58,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/WorldModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="39" column="20" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
+            <state relative-caret-position="257">
+              <caret line="31" column="8" lean-forward="true" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -160,12 +150,12 @@
         <option value="$PROJECT_DIR$/src/EventScheduler.java" />
         <option value="$PROJECT_DIR$/src/ImageStore.java" />
         <option value="$PROJECT_DIR$/src/Functions.java" />
-        <option value="$PROJECT_DIR$/src/WorldModel.java" />
         <option value="$PROJECT_DIR$/src/Viewport.java" />
         <option value="$PROJECT_DIR$/src/WorldView.java" />
         <option value="$PROJECT_DIR$/src/Action.java" />
         <option value="$PROJECT_DIR$/src/Entity.java" />
         <option value="$PROJECT_DIR$/src/Point.java" />
+        <option value="$PROJECT_DIR$/src/WorldModel.java" />
       </list>
     </option>
   </component>
@@ -359,13 +349,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/EntityKind.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="5" selection-start-column="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Event.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -382,16 +365,6 @@
             <element signature="e#342#343#0" expanded="true" />
             <element signature="e#279#280#0" expanded="true" />
             <element signature="e#342#343#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WorldModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="39" column="20" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -417,20 +390,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Functions.java">
+    <entry file="file://$PROJECT_DIR$/src/EntityKind.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="308" selection-start-line="308" selection-end-line="308" />
+        <state>
+          <caret column="5" selection-start-column="5" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Point.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="24" column="17" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
+        <state relative-caret-position="254">
+          <caret line="29" column="4" lean-forward="true" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WorldModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="31" column="8" lean-forward="true" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Functions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
