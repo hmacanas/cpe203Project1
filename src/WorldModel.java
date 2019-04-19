@@ -4,11 +4,11 @@ import java.util.*;
 
 final class WorldModel
 {
-   public int numRows;
-   public int numCols;
-   public Background background[][];
-   public Entity occupancy[][];
-   public Set<Entity> entities;
+   private int numRows;
+   private int numCols;
+   private Background background[][];
+   private Entity occupancy[][];
+   private Set<Entity> entities;
 
    public WorldModel(int numRows, int numCols, Background defaultBackground)
    {
@@ -23,6 +23,10 @@ final class WorldModel
          Arrays.fill(this.background[row], defaultBackground);
       }
    }
+
+   public int getNumRows(){return this.numRows;}
+   public int getNumCols(){return this.numCols;}
+   public Set<Entity> getEntities(){return this.entities;}
 
     public void load(Scanner in, ImageStore imageStore)
     {
