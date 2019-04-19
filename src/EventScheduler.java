@@ -4,7 +4,7 @@ final class EventScheduler
 {
    private PriorityQueue<Event> eventQueue;
    private Map<Entity, List<Event>> pendingEvents;
-   private double timeScale;
+   private final double timeScale;
 
    public EventScheduler(double timeScale)
    {

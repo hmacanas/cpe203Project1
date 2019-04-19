@@ -1,10 +1,10 @@
 final class Action
 {
-   private ActionKind kind;
-   private Entity entity;
-   private WorldModel world;
-   private ImageStore imageStore;
-   private int repeatCount;
+   private final ActionKind kind;
+   private final Entity entity;
+   private final WorldModel world;
+   private final ImageStore imageStore;
+   private final int repeatCount;
 
    public Action(ActionKind kind, Entity entity, WorldModel world,
       ImageStore imageStore, int repeatCount)

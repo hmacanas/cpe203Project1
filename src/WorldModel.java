@@ -4,8 +4,8 @@ import java.util.*;
 
 final class WorldModel
 {
-   private int numRows;
-   private int numCols;
+   private final int numRows;
+   private final int numCols;
    private Background background[][];
    private Entity occupancy[][];
    private Set<Entity> entities;
