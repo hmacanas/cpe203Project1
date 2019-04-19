@@ -148,7 +148,15 @@
           <y:UML clipContent="true" constraint="" hasDetailsColor="false" omitDetails="false" stereotype="" use3DEffect="true">
             <y:AttributeLabel>+x: int
 +y: int</y:AttributeLabel>
-            <y:MethodLabel>+nearestEntity(): Optional&lt;Entity&gt;
+            <y:MethodLabel>+createVein(): Entity
++createQuake(): Entity
++createOreBlob(): Entity
++createOre(): Entity
++createMinerNotFull(): Entity
++createObstacle(): Entity
++createMinerFull(): Entity
++createBlacksmith():: Entity
++nearestEntity(): Optional&lt;Entity&gt;
 +findOpenAround(): Optional&lt;Point&gt;
 +toString(): String
 +equals(): boolean
@@ -245,7 +253,9 @@
 +tileHeight: int
 +viewport: Viewport</y:AttributeLabel>
             <y:MethodLabel>+shiftView()
-+drawBackground()</y:MethodLabel>
++drawBackground()
++drawEntities()
++drawViewport()</y:MethodLabel>
           </y:UML>
         </y:UMLClassNode>
       </data>
@@ -528,7 +538,7 @@ ANIMATION</y:AttributeLabel>
 +resourceCount: int
 +actionPeriod: int
 +animationPeriod: int</y:AttributeLabel>
-            <y:MethodLabel>
+            <y:MethodLabel>+createActivityAction(): Action
 +nextPositionOreBlob()
 +nextPositionMiner()
 +moveToOreBlob()
@@ -541,6 +551,7 @@ ANIMATION</y:AttributeLabel>
 +transformNotFull()
 +transformFull()
 +moveToNotFull()
++createAnimationAction(): Action
 +executeMinerNotFullActivity()
 +executeMinerFullActivity()
 +nextImage()

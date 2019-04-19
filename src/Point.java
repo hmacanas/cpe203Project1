@@ -1,3 +1,5 @@
+import processing.core.PImage;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -20,7 +22,64 @@ final class Point
       return deltaX * deltaX + deltaY * deltaY;
    }
 
-   public Optional<Entity> nearestEntity(List<Entity> entities)
+   public Entity createVein(String id, int actionPeriod,
+                            List<PImage> images)
+   {
+      return new Entity(EntityKind.VEIN, id, this, images, 0, 0,
+         actionPeriod, 0);
+   }
+
+   public Entity createQuake(List<PImage> images)
+   {
+      return new Entity(EntityKind.QUAKE, Functions.QUAKE_ID, this, images,
+         0, 0, Functions.QUAKE_ACTION_PERIOD, Functions.QUAKE_ANIMATION_PERIOD);
+   }
+
+   public Entity createOreBlob(String id,
+                               int actionPeriod, int animationPeriod, List<PImage> images)
+   {
+      return new Entity(EntityKind.ORE_BLOB, id, this, images,
+            0, 0, actionPeriod, animationPeriod);
+   }
+
+   public Entity createOre(String id, int actionPeriod,
+                           List<PImage> images)
+   {
+      return new Entity(EntityKind.ORE, id, this, images, 0, 0,
+         actionPeriod, 0);
+   }
+
+   public Entity createMinerNotFull(String id, int resourceLimit,
+                                    int actionPeriod, int animationPeriod,
+                                    List<PImage> images)
+   {
+      return new Entity(EntityKind.MINER_NOT_FULL, id, this, images,
+         resourceLimit, 0, actionPeriod, animationPeriod);
+   }
+
+   public Entity createObstacle(String id,
+                                List<PImage> images)
+   {
+      return new Entity(EntityKind.OBSTACLE, id, this, images,
+         0, 0, 0, 0);
+   }
+
+   public Entity createMinerFull(String id, int resourceLimit,
+                                 int actionPeriod, int animationPeriod,
+                                 List<PImage> images)
+   {
+      return new Entity(EntityKind.MINER_FULL, id, this, images,
+         resourceLimit, resourceLimit, actionPeriod, animationPeriod);
+   }
+
+   public Entity createBlacksmith(String id,
+                                   List<PImage> images)
+    {
+       return new Entity(EntityKind.BLACKSMITH, id, this, images,
+          0, 0, 0, 0);
+    }
+
+    public Optional<Entity> nearestEntity(List<Entity> entities)
    {
       if (entities.isEmpty())
       {
