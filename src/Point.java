@@ -88,11 +88,11 @@ final class Point
       else
       {
          Entity nearest = entities.get(0);
-         int nearestDistance = Point.distanceSquared(nearest.position, this);
+         int nearestDistance = Point.distanceSquared(nearest.getPosition(), this);
 
          for (Entity other : entities)
          {
-            int otherDistance = Point.distanceSquared(other.position, this);
+            int otherDistance = Point.distanceSquared(other.getPosition(), this);
 
             if (otherDistance < nearestDistance)
             {

@@ -16,19 +16,19 @@ final class EventScheduler
    public void updateOnTime(long time)
    {
       while (!this.eventQueue.isEmpty() &&
-         this.eventQueue.peek().time < time)
+         this.eventQueue.peek().getTime() < time)
       {
          Event next = this.eventQueue.poll();
 
          removePendingEvent(next);
 
-         executeAction(next.action);
+         executeAction(next.getAction());
       }
    }
 
    public void removePendingEvent(Event event)
    {
-      List<Event> pending = this.pendingEvents.get(event.entity);
+      List<Event> pending = this.pendingEvents.get(event.getEntity());
 
       if (pending != null)
       {
@@ -66,7 +66,7 @@ final class EventScheduler
 
    public void executeAction(Action action)
     {
-       switch (action.kind)
+       switch (action.getKind())
        {
        case ACTIVITY:
           action.executeActivityAction(this);

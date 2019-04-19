@@ -81,12 +81,12 @@ final class Functions
    {
       if (entity instanceof Background)
       {
-         return ((Background)entity).images
-            .get(((Background)entity).imageIndex);
+         return ((Background)entity).getImages()
+            .get(((Background)entity).getImageIndex());
       }
       else if (entity instanceof Entity)
       {
-         return ((Entity)entity).images.get(((Entity)entity).imageIndex);
+         return ((Entity)entity).getImages().get(((Entity)entity).getImageIndex());
       }
       else
       {
