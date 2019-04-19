@@ -135,7 +135,7 @@
       <data key="d4"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="135.0" width="241.0" x="325.4706595931806" y="479.85994390846815"/>
+          <y:Geometry height="184.06479738398048" width="241.0" x="325.4706595931806" y="479.85994390846815"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.310546875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="38.30908203125" x="101.345458984375" y="3.0">Point<y:LabelModel>
@@ -148,10 +148,12 @@
           <y:UML clipContent="true" constraint="" hasDetailsColor="false" omitDetails="false" stereotype="" use3DEffect="true">
             <y:AttributeLabel>+x: int
 +y: int</y:AttributeLabel>
-            <y:MethodLabel>+findOpenAround(): Optional&lt;Point&gt;
+            <y:MethodLabel>+nearestEntity(): Optional&lt;Entity&gt;
++findOpenAround(): Optional&lt;Point&gt;
 +toString(): String
 +equals(): boolean
-+adjacent(): boolean &lt;&lt;static&gt;&gt;</y:MethodLabel>
++adjacent(): boolean &lt;&lt;static&gt;&gt;
++distanceSquared(): int &lt;&lt;static&gt;&gt;</y:MethodLabel>
           </y:UML>
         </y:UMLClassNode>
       </data>
@@ -176,7 +178,9 @@
 +numRows: int
 +numCols: int</y:AttributeLabel>
             <y:MethodLabel>+contains()
-+shift()</y:MethodLabel>
++shift()
++viewportToWorld(): Point
++worldToViewport(): Point</y:MethodLabel>
           </y:UML>
         </y:UMLClassNode>
       </data>
@@ -185,7 +189,7 @@
       <data key="d4"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="137.0" width="192.99999999999991" x="216.3659092388071" y="709.6340907611929"/>
+          <y:Geometry height="368.57762860848766" width="192.99999999999991" x="-386.7355408063191" y="816.259761487403"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.310546875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="83.36474609375" x="54.81762695312496" y="3.0">WorldModel<y:LabelModel>
@@ -201,7 +205,21 @@
 +background: Background[][]
 +occupancy: Entity[][]
 +entities: Set&lt;Entity&gt;</y:AttributeLabel>
-            <y:MethodLabel/>
+            <y:MethodLabel>+isOccupied(): boolean
++withinBounds(): boolean
++ tryAddEntity()
++findNearest(): Optional&lt;Entity&gt;
++addEntity()
++moveEntity()
++removeEntity()
++removeEntityAt()
++getBackgroundImage(): Optional&lt;PImage&gt;
++setBackground()
++getOccupancyCell(): Entity
++setOccupancyCell()
++getOccupant(): Optional&lt;Entity&gt;
++getBackgroundCell(): Background
++setBackgroundCell()</y:MethodLabel>
           </y:UML>
         </y:UMLClassNode>
       </data>
@@ -226,7 +244,8 @@
 +tileWidth: int
 +tileHeight: int
 +viewport: Viewport</y:AttributeLabel>
-            <y:MethodLabel/>
+            <y:MethodLabel>+shiftView()
++drawBackground()</y:MethodLabel>
           </y:UML>
         </y:UMLClassNode>
       </data>

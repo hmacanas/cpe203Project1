@@ -11,6 +11,16 @@ final class Viewport
       this.numCols = numCols;
    }
 
+    public Point worldToViewport(int col, int row)
+    {
+       return new Point(col - this.col, row - this.row);
+    }
+
+    public Point viewportToWorld(int col, int row)
+    {
+       return new Point(col + this.col, row + this.row);
+    }
+
     public boolean contains(Point p)
     {
        return p.y >= this.row && p.y < this.row + this.numRows &&
