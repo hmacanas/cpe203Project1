@@ -22,7 +22,7 @@ final class EventScheduler
 
          removePendingEvent(next);
 
-         executeAction(next.getAction());
+         next.getAction().executeAction(this);
       }
    }
 
@@ -64,17 +64,4 @@ final class EventScheduler
       this.pendingEvents.put(entity, pending);
    }
 
-   public void executeAction(Action action)
-    {
-       switch (action.getKind())
-       {
-       case ACTIVITY:
-          action.executeActivityAction(this);
-          break;
-
-       case ANIMATION:
-          action.executeAnimationAction(this);
-          break;
-       }
-    }
 }

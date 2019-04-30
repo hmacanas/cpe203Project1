@@ -71,4 +71,18 @@ final class Action
             this.entity.getAnimationPeriod());
       }
    }
+
+   public void executeAction(EventScheduler scheduler)
+    {
+       switch (getKind())
+       {
+       case ACTIVITY:
+          executeActivityAction(scheduler);
+          break;
+
+       case ANIMATION:
+          executeAnimationAction(scheduler);
+          break;
+       }
+    }
 }
