@@ -64,4 +64,57 @@ final class EventScheduler
       this.pendingEvents.put(entity, pending);
    }
 
+   public void executeActivityAction(Action action)
+   {
+      switch (action.entity.getKind())
+      {
+      case MINER_FULL:
+         action.entity.executeMinerFullActivity(action.world,
+            action.imageStore, this);
+         break;
+
+      case MINER_NOT_FULL:
+         action.entity.executeMinerNotFullActivity(action.world,
+            action.imageStore, this);
+         break;
+
+      case ORE:
+         action.entity.executeOreActivity(action.world, action.imageStore,
+                 this);
+         break;
+
+      case ORE_BLOB:
+         action.entity.executeOreBlobActivity(action.world,
+            action.imageStore, this);
+         break;
+
+      case QUAKE:
+         action.entity.executeQuakeActivity(action.world, action.imageStore,
+                 this);
+         break;
+
+      case VEIN:
+         action.entity.executeVeinActivity(action.world, action.imageStore,
+                 this);
+         break;
+
+      default:
+         throw new UnsupportedOperationException(
+            String.format("executeActivityAction not supported for %s",
+            action.entity.getKind()));
+      }
+   }
+
+   public void executeAnimationAction(Action action)
+   {
+      action.entity.nextImage();
+
+      if (action.repeatCount != 1)
+      {
+         scheduleEvent(action.entity,
+            action.entity.createAnimationAction(
+                    Math.max(action.repeatCount - 1, 0)),
+            action.entity.getAnimationPeriod());
+      }
+   }
 }
