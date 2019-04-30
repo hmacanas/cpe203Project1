@@ -64,7 +64,7 @@ final class EventScheduler
       this.pendingEvents.put(entity, pending);
    }
 
-   public void executeActivityAction(Action action)
+   public void executeActivityAction(Activity action)
    {
       switch (action.entity.getKind())
       {
@@ -105,16 +105,13 @@ final class EventScheduler
       }
    }
 
-   public void executeAnimationAction(Action action)
+   public void executeAnimationAction(Animation animation)
    {
-      action.entity.nextImage();
+      animation.entity.nextImage();
 
-      if (action.repeatCount != 1)
+      if (animation.repeatCount != 1)
       {
-         scheduleEvent(action.entity,
-            action.entity.createAnimationAction(
-                    Math.max(action.repeatCount - 1, 0)),
-            action.entity.getAnimationPeriod());
+         scheduleEvent(animation.entity, animation.entity.createAnimationAction(Math.max(animation.repeatCount - 1, 0)), animation.entity.getAnimationPeriod());
       }
    }
 }
