@@ -1,12 +1,12 @@
 final class Animation implements Action
 {
-    private final Entity entity;
+    private final NameTmp entity;
     private final WorldModel world;
     private final ImageStore imageStore;
     private final int repeatCount;
 
-    public Animation(Entity entity, WorldModel world,
-                  ImageStore imageStore, int repeatCount)
+    public Animation(NameTmp entity, WorldModel world,
+                     ImageStore imageStore, int repeatCount)
     {
         this.entity = entity;
         this.world = world;
@@ -19,7 +19,7 @@ final class Animation implements Action
         scheduler.executeAnimationAction(this);
     }
 
-    public Entity getEntity() {
+    public NameTmp getEntity() {
         return entity;
     }
 

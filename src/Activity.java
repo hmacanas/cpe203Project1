@@ -1,18 +1,18 @@
 final class Activity implements Action
 {
-    private final Entity entity;
+    private final NameTmp entity;
     private final WorldModel world;
     private final ImageStore imageStore;
 
-    public Activity(Entity entity, WorldModel world,
-                  ImageStore imageStore, int repeatCount)
+    public Activity(NameTmp entity, WorldModel world,
+                    ImageStore imageStore, int repeatCount)
     {
         this.entity = entity;
         this.world = world;
         this.imageStore = imageStore;
     }
 
-    public Entity getEntity() {
+    public NameTmp getEntity() {
         return entity;
     }
 

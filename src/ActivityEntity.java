@@ -1,2 +1,2 @@
-interface ActivityEntity extends EntityTmp {
+interface ActivityEntity extends Entity {
 }

@@ -1,2 +1,2 @@
-interface AnimationEntity extends EntityTmp{
+interface AnimationEntity extends Entity{
 }

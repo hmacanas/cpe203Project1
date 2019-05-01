@@ -21,8 +21,8 @@
 \f0\b getCurrentImage():
 \f1\b0  PImage 	<<static>>\
 \pard\tx940\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li1440\fi-1440\pardirnatural\partightenfactor0
-\ls1\ilvl1\cf0 {\listtext	\uc0\u8259 	}while the input parameter was of Object type and the method itself was determine between whether an \'93entity\'94 was an instance of Background or Entity type in order to preform an operation. The immediate parameter was not of any object type defined by the src file classes.\
-{\listtext	\uc0\u8259 	}while it would be possible to include this method in both the Background and Entity classes, I opted not to in order to prevent repeating code.\
+\ls1\ilvl1\cf0 {\listtext	\uc0\u8259 	}while the input parameter was of Object type and the method itself was determine between whether an \'93entity\'94 was an instance of Background or NameTmp type in order to preform an operation. The immediate parameter was not of any object type defined by the src file classes.\
+{\listtext	\uc0\u8259 	}while it would be possible to include this method in both the Background and NameTmp classes, I opted not to in order to prevent repeating code.\
 {\listtext	\uc0\u8259 	}in the future when class design is more fleshed out I will  move this method\
 \pard\tx220\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li720\fi-720\pardirnatural\partightenfactor0
 \ls1\ilvl0\cf0 {\listtext	\uc0\u8226 	}+

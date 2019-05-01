@@ -55,10 +55,10 @@
           <y:UML clipContent="true" constraint="" hasDetailsColor="false" omitDetails="false" stereotype="" use3DEffect="true">
             <y:AttributeLabel>-action: Action
 -time: long
--entity: Entity</y:AttributeLabel>
+-entity: NameTmp</y:AttributeLabel>
             <y:MethodLabel>+getAction(): Action
 +getTime(): long
-+getEntity(): Entity</y:MethodLabel>
++getEntity(): NameTmp</y:MethodLabel>
           </y:UML>
         </y:UMLClassNode>
       </data>
@@ -100,7 +100,7 @@
           </y:NodeLabel>
           <y:UML clipContent="true" constraint="" hasDetailsColor="false" omitDetails="false" stereotype="" use3DEffect="true">
             <y:AttributeLabel>-eventQueue: PriorityQueue&lt;Event&gt;
--pendingEvents: Map&lt;Entity, List&lt;Event&gt;&gt;
+-pendingEvents: Map&lt;NameTmp, List&lt;Event&gt;&gt;
 -timeScale: double</y:AttributeLabel>
             <y:MethodLabel>+updateOnTime()
 + removePendingEvent()
@@ -151,15 +151,15 @@
           <y:UML clipContent="true" constraint="" hasDetailsColor="false" omitDetails="false" stereotype="" use3DEffect="true">
             <y:AttributeLabel>+x: int
 +y: int</y:AttributeLabel>
-            <y:MethodLabel>+createVein(): Entity
-+createQuake(): Entity
-+createOreBlob(): Entity
-+createOre(): Entity
-+createMinerNotFull(): Entity
-+createObstacle(): Entity
-+createMinerFull(): Entity
-+createBlacksmith():: Entity
-+nearestEntity(): Optional&lt;Entity&gt;
+            <y:MethodLabel>+createVein(): NameTmp
++createQuake(): NameTmp
++createOreBlob(): NameTmp
++createOre(): NameTmp
++createMinerNotFull(): NameTmp
++createObstacle(): NameTmp
++createMinerFull(): NameTmp
++createBlacksmith():: NameTmp
++nearestEntity(): Optional&lt;NameTmp&gt;
 +findOpenAround(): Optional&lt;Point&gt;
 +toString(): String
 +equals(): boolean
@@ -219,8 +219,8 @@ worldToViewport(): Point</y:MethodLabel>
 +numRows: int
 -numCols: int
 -background: Background[][]
--occupancy: Entity[][]
--entities: Set&lt;Entity&gt;</y:AttributeLabel>
+-occupancy: NameTmp[][]
+-entities: Set&lt;NameTmp&gt;</y:AttributeLabel>
             <y:MethodLabel>+getEntities(): Set&lt;Entities&gt;
 +getNumCols(): int
 +getNumRows(): int
@@ -235,16 +235,16 @@ worldToViewport(): Point</y:MethodLabel>
 +isOccupied(): boolean
 +withinBounds(): boolean
 + tryAddEntity()
-+findNearest(): Optional&lt;Entity&gt;
++findNearest(): Optional&lt;NameTmp&gt;
 +addEntity()
 +moveEntity()
 +removeEntity()
 +removeEntityAt()
 +getBackgroundImage(): Optional&lt;PImage&gt;
 +setBackground()
-+getOccupancyCell(): Entity
++getOccupancyCell(): NameTmp
 +setOccupancyCell()
-+getOccupant(): Optional&lt;Entity&gt;
++getOccupant(): Optional&lt;NameTmp&gt;
 +getBackgroundCell(): Background
 +setBackgroundCell()</y:MethodLabel>
           </y:UML>
@@ -432,7 +432,7 @@ worldToViewport(): Point</y:MethodLabel>
           </y:NodeLabel>
           <y:UML clipContent="true" constraint="" hasDetailsColor="false" omitDetails="false" stereotype="" use3DEffect="true">
             <y:AttributeLabel>+kind: ActionKind
--entity: Entity
+-entity: NameTmp
 -world: WorldModel
 -imageStore: ImageStore
 -repeatCount: int</y:AttributeLabel>
@@ -473,7 +473,7 @@ ANIMATION</y:AttributeLabel>
           <y:Geometry height="405.6462693618859" width="240.99999999999994" x="-214.7330054937696" y="216.00147931487416"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.310546875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="42.68896484375" x="99.15551757812497" y="3.0">Entity<y:LabelModel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.310546875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="42.68896484375" x="99.15551757812497" y="3.0">NameTmp<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
             <y:ModelParameter>

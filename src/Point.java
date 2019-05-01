@@ -22,64 +22,64 @@ final class Point
       return deltaX * deltaX + deltaY * deltaY;
    }
 
-   public Entity createVein(String id, int actionPeriod,
-                            List<PImage> images)
+   public NameTmp createVein(String id, int actionPeriod,
+                             List<PImage> images)
    {
-      return new Entity(EntityKind.VEIN, id, this, images, 0, 0,
+      return new NameTmp(EntityKind.VEIN, id, this, images, 0, 0,
          actionPeriod, 0);
    }
 
-   public Entity createQuake(List<PImage> images)
+   public NameTmp createQuake(List<PImage> images)
    {
-      return new Entity(EntityKind.QUAKE, Functions.QUAKE_ID, this, images,
+      return new NameTmp(EntityKind.QUAKE, Functions.QUAKE_ID, this, images,
          0, 0, Functions.QUAKE_ACTION_PERIOD, Functions.QUAKE_ANIMATION_PERIOD);
    }
 
-   public Entity createOreBlob(String id,
-                               int actionPeriod, int animationPeriod, List<PImage> images)
+   public NameTmp createOreBlob(String id,
+                                int actionPeriod, int animationPeriod, List<PImage> images)
    {
-      return new Entity(EntityKind.ORE_BLOB, id, this, images,
+      return new NameTmp(EntityKind.ORE_BLOB, id, this, images,
             0, 0, actionPeriod, animationPeriod);
    }
 
-   public Entity createOre(String id, int actionPeriod,
-                           List<PImage> images)
+   public NameTmp createOre(String id, int actionPeriod,
+                            List<PImage> images)
    {
-      return new Entity(EntityKind.ORE, id, this, images, 0, 0,
+      return new NameTmp(EntityKind.ORE, id, this, images, 0, 0,
          actionPeriod, 0);
    }
 
-   public Entity createMinerNotFull(String id, int resourceLimit,
-                                    int actionPeriod, int animationPeriod,
-                                    List<PImage> images)
+   public NameTmp createMinerNotFull(String id, int resourceLimit,
+                                     int actionPeriod, int animationPeriod,
+                                     List<PImage> images)
    {
-      return new Entity(EntityKind.MINER_NOT_FULL, id, this, images,
+      return new NameTmp(EntityKind.MINER_NOT_FULL, id, this, images,
          resourceLimit, 0, actionPeriod, animationPeriod);
    }
 
-   public Entity createObstacle(String id,
-                                List<PImage> images)
+   public NameTmp createObstacle(String id,
+                                 List<PImage> images)
    {
-      return new Entity(EntityKind.OBSTACLE, id, this, images,
+      return new NameTmp(EntityKind.OBSTACLE, id, this, images,
          0, 0, 0, 0);
    }
 
-   public Entity createMinerFull(String id, int resourceLimit,
-                                 int actionPeriod, int animationPeriod,
-                                 List<PImage> images)
+   public NameTmp createMinerFull(String id, int resourceLimit,
+                                  int actionPeriod, int animationPeriod,
+                                  List<PImage> images)
    {
-      return new Entity(EntityKind.MINER_FULL, id, this, images,
+      return new NameTmp(EntityKind.MINER_FULL, id, this, images,
          resourceLimit, resourceLimit, actionPeriod, animationPeriod);
    }
 
-   public Entity createBlacksmith(String id,
+   public NameTmp createBlacksmith(String id,
                                    List<PImage> images)
     {
-       return new Entity(EntityKind.BLACKSMITH, id, this, images,
+       return new NameTmp(EntityKind.BLACKSMITH, id, this, images,
           0, 0, 0, 0);
     }
 
-    public Optional<Entity> nearestEntity(List<Entity> entities)
+    public Optional<NameTmp> nearestEntity(List<NameTmp> entities)
    {
       if (entities.isEmpty())
       {
@@ -87,10 +87,10 @@ final class Point
       }
       else
       {
-         Entity nearest = entities.get(0);
+         NameTmp nearest = entities.get(0);
          int nearestDistance = Point.distanceSquared(nearest.getPosition(), this);
 
-         for (Entity other : entities)
+         for (NameTmp other : entities)
          {
             int otherDistance = Point.distanceSquared(other.getPosition(), this);
 
