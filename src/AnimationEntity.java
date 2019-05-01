@@ -1,0 +1,2 @@
+interface AnimationEntity extends Entity{
+}

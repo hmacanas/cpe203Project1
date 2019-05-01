@@ -1,0 +1,2 @@
+interface ActivityEntity  extends Entity {
+}
