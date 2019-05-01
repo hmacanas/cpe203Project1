@@ -1,4 +1,4 @@
-final class Animation
+final class Animation implements Action
 {
     public final Entity entity;
     public final WorldModel world;
@@ -13,7 +13,6 @@ final class Animation
         this.imageStore = imageStore;
         this.repeatCount = repeatCount;
     }
-
 
     public void executeAction(EventScheduler scheduler)
     {

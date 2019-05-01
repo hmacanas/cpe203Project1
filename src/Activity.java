@@ -1,4 +1,4 @@
-final class Activity
+final class Activity implements Action
 {
     public final Entity entity;
     public final WorldModel world;
