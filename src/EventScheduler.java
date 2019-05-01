@@ -66,52 +66,52 @@ final class EventScheduler
 
    public void executeActivityAction(Activity action)
    {
-      switch (action.entity.getKind())
+      switch (action.getEntity().getKind())
       {
       case MINER_FULL:
-         action.entity.executeMinerFullActivity(action.world,
-            action.imageStore, this);
+         action.getEntity().executeMinerFullActivity(action.getWorld(),
+            action.getImageStore(), this);
          break;
 
       case MINER_NOT_FULL:
-         action.entity.executeMinerNotFullActivity(action.world,
-            action.imageStore, this);
+         action.getEntity().executeMinerNotFullActivity(action.getWorld(),
+            action.getImageStore(), this);
          break;
 
       case ORE:
-         action.entity.executeOreActivity(action.world, action.imageStore,
+         action.getEntity().executeOreActivity(action.getWorld(), action.getImageStore(),
                  this);
          break;
 
       case ORE_BLOB:
-         action.entity.executeOreBlobActivity(action.world,
-            action.imageStore, this);
+         action.getEntity().executeOreBlobActivity(action.getWorld(),
+            action.getImageStore(), this);
          break;
 
       case QUAKE:
-         action.entity.executeQuakeActivity(action.world, action.imageStore,
+         action.getEntity().executeQuakeActivity(action.getWorld(), action.getImageStore(),
                  this);
          break;
 
       case VEIN:
-         action.entity.executeVeinActivity(action.world, action.imageStore,
+         action.getEntity().executeVeinActivity(action.getWorld(), action.getImageStore(),
                  this);
          break;
 
       default:
          throw new UnsupportedOperationException(
             String.format("executeActivityAction not supported for %s",
-            action.entity.getKind()));
+            action.getEntity().getKind()));
       }
    }
 
    public void executeAnimationAction(Animation animation)
    {
-      animation.entity.nextImage();
+      animation.getEntity().nextImage();
 
-      if (animation.repeatCount != 1)
+      if (animation.getRepeatCount() != 1)
       {
-         scheduleEvent(animation.entity, animation.entity.createAnimationAction(Math.max(animation.repeatCount - 1, 0)), animation.entity.getAnimationPeriod());
+         scheduleEvent(animation.getEntity(), animation.getEntity().createAnimationAction(Math.max(animation.getRepeatCount() - 1, 0)), animation.getEntity().getAnimationPeriod());
       }
    }
 }

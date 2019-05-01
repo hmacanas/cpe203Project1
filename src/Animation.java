@@ -1,9 +1,9 @@
 final class Animation implements Action
 {
-    public final Entity entity;
-    public final WorldModel world;
-    public final ImageStore imageStore;
-    public final int repeatCount;
+    private final Entity entity;
+    private final WorldModel world;
+    private final ImageStore imageStore;
+    private final int repeatCount;
 
     public Animation(Entity entity, WorldModel world,
                   ImageStore imageStore, int repeatCount)
@@ -17,5 +17,13 @@ final class Animation implements Action
     public void executeAction(EventScheduler scheduler)
     {
         scheduler.executeAnimationAction(this);
+    }
+
+    public Entity getEntity() {
+        return entity;
+    }
+
+    public int getRepeatCount() {
+        return repeatCount;
     }
 }
