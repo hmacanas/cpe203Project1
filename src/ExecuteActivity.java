@@ -1,0 +1,3 @@
+interface ExecuteActivity {
+    void executeActivity();
+}
