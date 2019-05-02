@@ -1,3 +1,0 @@
-interface ExecuteActivity {
-    void executeActivity();
-}
