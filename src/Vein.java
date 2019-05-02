@@ -3,7 +3,7 @@ import java.util.Optional;
 
 import processing.core.PImage;
 
-final class Vein implements ActivityEntity
+final class Vein implements ActivityEntity, Schedulable
 {
     private final String id;
     private Point position;
@@ -63,6 +63,13 @@ final class Vein implements ActivityEntity
     public void nextImage()
     {
         this.imageIndex = (this.imageIndex + 1) % this.images.size();
+    }
+
+    public void scheduleAllEvents(EventScheduler scheduler, WorldModel world, ImageStore imageStore)
+    {
+        scheduler.scheduleEvent(this,
+                this.createActivityAction(world, imageStore),
+                this.getActionPeriod());
     }
 
 }

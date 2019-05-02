@@ -3,7 +3,7 @@ import processing.core.PImage;
 import java.util.List;
 import java.util.Optional;
 
-public class Ore implements ActivityEntity
+public class Ore implements ActivityEntity, Schedulable
 {
 
     private final String id;
@@ -60,5 +60,12 @@ public class Ore implements ActivityEntity
     public void nextImage()
     {
         this.imageIndex = (this.imageIndex + 1) % this.images.size();
+    }
+
+    public void scheduleAllEvents(EventScheduler scheduler, WorldModel world, ImageStore imageStore)
+    {
+        scheduler.scheduleEvent(this,
+                this.createActivityAction(world, imageStore),
+                this.getActionPeriod());
     }
 }

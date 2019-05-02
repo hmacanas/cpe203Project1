@@ -3,7 +3,7 @@ import java.util.Optional;
 
 import processing.core.PImage;
 
-final class Quake implements AnimationEntity, ActivityEntity
+final class Quake implements AnimationEntity, ActivityEntity, Schedulable
 {
     private final String id;
     private Point position;
@@ -61,6 +61,14 @@ final class Quake implements AnimationEntity, ActivityEntity
     public int getAnimationPeriod()
     {
         return this.animationPeriod;
+    }
+
+    public void scheduleAllEvents(EventScheduler scheduler, WorldModel world, ImageStore imageStore)
+    {
+        scheduler.scheduleEvent(this, this.createActivityAction(world, imageStore), this.getActionPeriod());
+        scheduler.scheduleEvent(this,
+                this.createAnimationAction(Functions.QUAKE_ANIMATION_REPEAT_COUNT),
+                this.getAnimationPeriod());
     }
 
 }

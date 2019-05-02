@@ -3,7 +3,7 @@ import java.util.Optional;
 
 import processing.core.PImage;
 
-final class Miner_Not_Full implements ActivityEntity, AnimationEntity
+final class Miner_Not_Full implements ActivityEntity, AnimationEntity, Schedulable
 {
     private final String id;
     private Point position;
@@ -145,5 +145,14 @@ final class Miner_Not_Full implements ActivityEntity, AnimationEntity
 
     public int getAnimationPeriod() {
         return this.animationPeriod;
+    }
+
+    public void scheduleAllEvents(EventScheduler scheduler, WorldModel world, ImageStore imageStore)
+    {
+        scheduler.scheduleEvent(this,
+                this.createActivityAction(world, imageStore),
+                this.getActionPeriod());
+        scheduler.scheduleEvent(this,
+                this.createAnimationAction(0), this.getAnimationPeriod());
     }
 }

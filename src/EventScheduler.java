@@ -80,52 +80,10 @@ final class EventScheduler
       }
    }
 
-   public void scheduleActions(WorldModel world, ImageStore imageStore, AnimationEntity entity)
+   public void scheduleActions(WorldModel world, ImageStore imageStore, Schedulable schedulable)
    {
-         if (entity instanceof Miner_Full) {
-               scheduleEvent(entity,
-                       entity.createActivityAction(world, imageStore),
-                       entity.getActionPeriod());
-               scheduleEvent(entity, entity.createAnimationAction(0),
-                       entity.getAnimationPeriod());
-         }
+         schedulable.scheduleAllEvents(this, world, imageStore);
 
-         else if(entity instanceof Miner_Not_Full) {
-            scheduleEvent(entity,
-                    entity.createActivityAction(world, imageStore),
-                    entity.getActionPeriod());
-            scheduleEvent(entity,
-                    entity.createAnimationAction(0), entity.getAnimationPeriod());
-         }
-
-         else if (entity instanceof Ore) {
-            scheduleEvent(entity,
-                    entity.createActivityAction(world, imageStore),
-                    entity.getActionPeriod());
-         }
-
-         else if (entity instanceof Ore_Blob) {
-            scheduleEvent(entity,
-                    entity.createActivityAction(world, imageStore),
-                    entity.getActionPeriod());
-            scheduleEvent(entity,
-                    entity.createAnimationAction(0), entity.getAnimationPeriod());
-         }
-
-         else if (entity instanceof Quake) {
-            scheduleEvent(entity,
-                    entity.createActivityAction(world, imageStore),
-                    entity.getActionPeriod());
-            scheduleEvent(entity,
-                    entity.createAnimationAction(Functions.QUAKE_ANIMATION_REPEAT_COUNT),
-                    entity.getAnimationPeriod());
-         }
-
-         else if (entity instanceof Vein) {
-            scheduleEvent(entity,
-                    entity.createActivityAction(world, imageStore),
-                    entity.getActionPeriod());
-         }
    }
 }
 
