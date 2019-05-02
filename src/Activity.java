@@ -1,10 +1,10 @@
 final class Activity implements Action
 {
-    private final NameTmp entity;
+    private final Execute entity;
     private final WorldModel world;
     private final ImageStore imageStore;
 
-    public Activity(NameTmp entity, WorldModel world,
+    public Activity(Execute entity, WorldModel world,
                     ImageStore imageStore, int repeatCount)
     {
         this.entity = entity;
@@ -12,7 +12,7 @@ final class Activity implements Action
         this.imageStore = imageStore;
     }
 
-    public NameTmp getEntity() {
+    public Execute getEntity() {
         return entity;
     }
 

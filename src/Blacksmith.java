@@ -31,5 +31,21 @@ final class Blacksmith implements Entity
     {
         this.imageIndex = (this.imageIndex + 1) % this.images.size();
     }
+
+    public Activity createActivityAction(WorldModel world, ImageStore imageStore) {
+        return null;
+    }
+
+    public int getActionPeriod() {
+        return 0;
+    }
+
+    public Animation createAnimationAction(int repeatCount) {
+        return null;
+    }
+
+    public int getAnimationPeriod() {
+        return 0;
+    }
 }
 

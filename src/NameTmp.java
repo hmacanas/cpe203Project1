@@ -2,7 +2,6 @@ import java.util.List;
 import java.util.Optional;
 
 import processing.core.PImage;
-
 final class NameTmp implements Entity
 {
    private final EntityKind kind;
@@ -42,11 +41,11 @@ final class NameTmp implements Entity
 
    public int getImageIndex(){return this.imageIndex;}
 
-   public Activity createActivityAction(WorldModel world,
-                                        ImageStore imageStore)
-   {
-      return new Activity(this, world, imageStore, 0);
-   }
+//   public Activity createActivityAction(WorldModel world,
+//                                        ImageStore imageStore)
+//   {
+//      return new Activity(this, world, imageStore, 0);
+//   }
 
    public Animation createAnimationAction(int repeatCount)
    {
@@ -60,17 +59,17 @@ final class NameTmp implements Entity
       Point newPos = new Point(this.position.x + horiz,
               this.position.y);
 
-      Optional<NameTmp> occupant = world.getOccupant(newPos);
+      Optional<Entity> occupant = world.getOccupant(newPos);
 
       if (horiz == 0 ||
-              (occupant.isPresent() && !(occupant.get().kind == EntityKind.ORE)))
+              (occupant.isPresent() && !(occupant.get().getClass() == Ore.class)))
       {
          int vert = Integer.signum(destPos.y - this.position.y);
          newPos = new Point(this.position.x, this.position.y + vert);
          occupant = world.getOccupant(newPos);
 
          if (vert == 0 ||
-                 (occupant.isPresent() && !(occupant.get().kind == EntityKind.ORE)))
+                 (occupant.isPresent() && !(occupant.get().getClass() == Ore.class)))
          {
             newPos = this.position;
          }
@@ -102,9 +101,9 @@ final class NameTmp implements Entity
    }
 
    public boolean moveToOreBlob(WorldModel world,
-                                NameTmp target, EventScheduler scheduler)
+                                Entity target, EventScheduler scheduler)
    {
-      if (Point.adjacent(this.position, target.position))
+      if (Point.adjacent(this.position, target.getPosition()))
       {
          world.removeEntity(target);
          scheduler.unscheduleAllEvents(target);
@@ -112,11 +111,11 @@ final class NameTmp implements Entity
       }
       else
       {
-         Point nextPos = this.nextPositionOreBlob(world, target.position);
+         Point nextPos = this.nextPositionOreBlob(world, target.getPosition());
 
          if (!this.position.equals(nextPos))
          {
-            Optional<NameTmp> occupant = world.getOccupant(nextPos);
+            Optional<Entity> occupant = world.getOccupant(nextPos);
             if (occupant.isPresent())
             {
                scheduler.unscheduleAllEvents(occupant.get());
@@ -129,19 +128,19 @@ final class NameTmp implements Entity
    }
 
    public boolean moveToFull(WorldModel world,
-                             NameTmp target, EventScheduler scheduler)
+                             Entity target, EventScheduler scheduler)
    {
-      if (Point.adjacent(this.position, target.position))
+      if (Point.adjacent(this.position, target.getPosition()))
       {
          return true;
       }
       else
       {
-         Point nextPos = this.nextPositionMiner(world, target.position);
+         Point nextPos = this.nextPositionMiner(world, target.getPosition());
 
          if (!this.position.equals(nextPos))
          {
-            Optional<NameTmp> occupant = world.getOccupant(nextPos);
+            Optional<Entity> occupant = world.getOccupant(nextPos);
             if (occupant.isPresent())
             {
                scheduler.unscheduleAllEvents(occupant.get());
@@ -154,9 +153,9 @@ final class NameTmp implements Entity
    }
 
    public boolean moveToNotFull(WorldModel world,
-                                NameTmp target, EventScheduler scheduler)
+                                Entity target, EventScheduler scheduler)
    {
-      if (Point.adjacent(this.position, target.position))
+      if (Point.adjacent(this.position, target.getPosition()))
       {
          this.resourceCount += 1;
          world.removeEntity(target);
@@ -166,11 +165,11 @@ final class NameTmp implements Entity
       }
       else
       {
-         Point nextPos = this.nextPositionMiner(world, target.position);
+         Point nextPos = this.nextPositionMiner(world, target.getPosition());
 
          if (!this.position.equals(nextPos))
          {
-            Optional<NameTmp> occupant = world.getOccupant(nextPos);
+            Optional<Entity> occupant = world.getOccupant(nextPos);
             if (occupant.isPresent())
             {
                scheduler.unscheduleAllEvents(occupant.get());
@@ -185,7 +184,7 @@ final class NameTmp implements Entity
    public void transformFull(WorldModel world,
                              EventScheduler scheduler, ImageStore imageStore)
    {
-      NameTmp miner = this.position.createMinerNotFull(this.id, this.resourceLimit,
+      Miner_Not_Full miner = this.position.createMinerNotFull(this.id, this.resourceLimit,
               this.actionPeriod, this.animationPeriod,
               this.images);
 
@@ -201,7 +200,7 @@ final class NameTmp implements Entity
    {
       if (this.resourceCount >= this.resourceLimit)
       {
-         NameTmp miner = this.position.createMinerFull(this.id, this.resourceLimit,
+         Miner_Full miner = this.position.createMinerFull(this.id, this.resourceLimit,
                  this.actionPeriod, this.animationPeriod,
                  this.images);
 
@@ -224,7 +223,7 @@ final class NameTmp implements Entity
 
       if (openPt.isPresent())
       {
-         NameTmp ore = openPt.get().createOre(Functions.ORE_ID_PREFIX + this.id,
+         Ore ore = openPt.get().createOre(Functions.ORE_ID_PREFIX + this.id,
                  Functions.ORE_CORRUPT_MIN +
                          Functions.rand.nextInt(Functions.ORE_CORRUPT_MAX - Functions.ORE_CORRUPT_MIN),
                  imageStore.getImageList(Functions.ORE_KEY));
@@ -247,17 +246,17 @@ final class NameTmp implements Entity
    public void executeOreBlobActivity(WorldModel world,
                                       ImageStore imageStore, EventScheduler scheduler)
    {
-      Optional<NameTmp> blobTarget = world.findNearest(
-              this.position, EntityKind.VEIN);
+      Optional<Entity> blobTarget = world.findNearest(
+              this.position, Ore.class);
       long nextPeriod = this.actionPeriod;
 
       if (blobTarget.isPresent())
       {
-         Point tgtPos = blobTarget.get().position;
+         Point tgtPos = blobTarget.get().getPosition();
 
          if (this.moveToOreBlob(world, blobTarget.get(), scheduler))
          {
-            NameTmp quake = tgtPos.createQuake(
+            Quake quake = tgtPos.createQuake(
                     imageStore.getImageList(Functions.QUAKE_KEY));
 
             world.addEntity(quake);
@@ -279,7 +278,7 @@ final class NameTmp implements Entity
       world.removeEntity(this);
       scheduler.unscheduleAllEvents(this);
 
-      NameTmp blob = pos.createOreBlob(this.id + Functions.BLOB_ID_SUFFIX,
+      Ore_Blob blob = pos.createOreBlob(this.id + Functions.BLOB_ID_SUFFIX,
               this.actionPeriod / Functions.BLOB_PERIOD_SCALE,
               Functions.BLOB_ANIMATION_MIN +
                       Functions.rand.nextInt(Functions.BLOB_ANIMATION_MAX - Functions.BLOB_ANIMATION_MIN),
@@ -291,8 +290,8 @@ final class NameTmp implements Entity
 
    public void executeMinerNotFullActivity(WorldModel world, ImageStore imageStore, EventScheduler scheduler)
    {
-      Optional<NameTmp> notFullTarget = world.findNearest(this.position,
-              EntityKind.ORE);
+      Optional<Entity> notFullTarget = world.findNearest(this.position,
+              Ore.class);
 
       if (!notFullTarget.isPresent() ||
               !this.moveToNotFull(world, notFullTarget.get(), scheduler) ||
@@ -307,8 +306,8 @@ final class NameTmp implements Entity
    public void executeMinerFullActivity(WorldModel world,
                                         ImageStore imageStore, EventScheduler scheduler)
    {
-      Optional<NameTmp> fullTarget = world.findNearest(this.position,
-              EntityKind.BLACKSMITH);
+      Optional<Entity> fullTarget = world.findNearest(this.position,
+              Blacksmith.class);
 
       if (fullTarget.isPresent() &&
               this.moveToFull(world, fullTarget.get(), scheduler))

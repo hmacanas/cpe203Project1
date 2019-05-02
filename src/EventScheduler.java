@@ -3,7 +3,7 @@ import java.util.*;
 final class EventScheduler
 {
    private PriorityQueue<Event> eventQueue;
-   private Map<NameTmp, List<Event>> pendingEvents;
+   private Map<Entity, List<Event>> pendingEvents;
    private final double timeScale;
 
    public EventScheduler(double timeScale)
@@ -36,7 +36,7 @@ final class EventScheduler
       }
    }
 
-   public void unscheduleAllEvents(NameTmp entity)
+   public void unscheduleAllEvents(Entity entity)
    {
       List<Event> pending = this.pendingEvents.remove(entity);
 
@@ -49,7 +49,7 @@ final class EventScheduler
       }
    }
 
-   public void scheduleEvent(NameTmp entity, Action action, long afterPeriod)
+   public void scheduleEvent(Entity entity, Action action, long afterPeriod)
    {
       long time = System.currentTimeMillis() +
          (long)(afterPeriod * this.timeScale);
@@ -66,43 +66,8 @@ final class EventScheduler
 
    public void executeActivityAction(Activity action)
    {
-      switch (action.getEntity().getKind())
-      {
-      case MINER_FULL:
-         action.getEntity().executeMinerFullActivity(action.getWorld(),
-            action.getImageStore(), this);
-         break;
-
-      case MINER_NOT_FULL:
-         action.getEntity().executeMinerNotFullActivity(action.getWorld(),
-            action.getImageStore(), this);
-         break;
-
-      case ORE:
-         action.getEntity().executeOreActivity(action.getWorld(), action.getImageStore(),
-                 this);
-         break;
-
-      case ORE_BLOB:
-         action.getEntity().executeOreBlobActivity(action.getWorld(),
-            action.getImageStore(), this);
-         break;
-
-      case QUAKE:
-         action.getEntity().executeQuakeActivity(action.getWorld(), action.getImageStore(),
-                 this);
-         break;
-
-      case VEIN:
-         action.getEntity().executeVeinActivity(action.getWorld(), action.getImageStore(),
-                 this);
-         break;
-
-      default:
-         throw new UnsupportedOperationException(
-            String.format("executeActivityAction not supported for %s",
-            action.getEntity().getKind()));
-      }
+      action.getEntity().executeActivity(action.getWorld(), action.getImageStore(),
+              this);
    }
 
    public void executeAnimationAction(Animation animation)
@@ -115,57 +80,52 @@ final class EventScheduler
       }
    }
 
-   public void scheduleActions(WorldModel world, ImageStore imageStore, NameTmp entity)
+   public void scheduleActions(WorldModel world, ImageStore imageStore, Entity entity)
    {
-      switch (entity.getKind())
-      {
-         case MINER_FULL:
-            scheduleEvent(entity,
-                    entity.createActivityAction(world, imageStore),
-                    entity.getActionPeriod());
-            scheduleEvent(entity, entity.createAnimationAction(0),
-                    entity.getAnimationPeriod());
-            break;
+         if (entity instanceof Miner_Full) {
+               scheduleEvent(entity,
+                       entity.createActivityAction(world, imageStore),
+                       entity.getActionPeriod());
+               scheduleEvent(entity, entity.createAnimationAction(0),
+                       entity.getAnimationPeriod());
+         }
 
-         case MINER_NOT_FULL:
-            scheduleEvent(entity,
-                    entity.createActivityAction(world, imageStore),
-                    entity.getActionPeriod());
-            scheduleEvent(entity,
-                    entity.createAnimationAction(0), entity.getAnimationPeriod());
-            break;
-
-         case ORE:
-            scheduleEvent(entity,
-                    entity.createActivityAction(world, imageStore),
-                    entity.getActionPeriod());
-            break;
-
-         case ORE_BLOB:
+         else if(entity instanceof Miner_Not_Full) {
             scheduleEvent(entity,
                     entity.createActivityAction(world, imageStore),
                     entity.getActionPeriod());
             scheduleEvent(entity,
                     entity.createAnimationAction(0), entity.getAnimationPeriod());
-            break;
+         }
 
-         case QUAKE:
+         else if (entity instanceof Ore) {
+            scheduleEvent(entity,
+                    entity.createActivityAction(world, imageStore),
+                    entity.getActionPeriod());
+         }
+
+         else if (entity instanceof Ore_Blob) {
+            scheduleEvent(entity,
+                    entity.createActivityAction(world, imageStore),
+                    entity.getActionPeriod());
+            scheduleEvent(entity,
+                    entity.createAnimationAction(0), entity.getAnimationPeriod());
+         }
+
+         else if (entity instanceof Quake) {
             scheduleEvent(entity,
                     entity.createActivityAction(world, imageStore),
                     entity.getActionPeriod());
             scheduleEvent(entity,
                     entity.createAnimationAction(Functions.QUAKE_ANIMATION_REPEAT_COUNT),
                     entity.getAnimationPeriod());
-            break;
+         }
 
-         case VEIN:
+         else if (entity instanceof Vein) {
             scheduleEvent(entity,
                     entity.createActivityAction(world, imageStore),
                     entity.getActionPeriod());
-            break;
-
-         default:
-      }
+         }
    }
 }
 

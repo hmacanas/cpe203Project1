@@ -7,8 +7,8 @@ final class WorldModel
    private final int numRows;
    private final int numCols;
    private Background background[][];
-   private NameTmp occupancy[][];
-   private Set<NameTmp> entities;
+   private Entity occupancy[][];
+   private Set<Entity> entities;
 
    public WorldModel(int numRows, int numCols, Background defaultBackground)
    {
@@ -26,7 +26,7 @@ final class WorldModel
 
    public int getNumRows(){return this.numRows;}
    public int getNumCols(){return this.numCols;}
-   public Set<NameTmp> getEntities(){return this.entities;}
+   public Set<Entity> getEntities(){return this.entities;}
 
     public void load(Scanner in, ImageStore imageStore)
     {
@@ -88,7 +88,7 @@ final class WorldModel
        {
           Point pt = new Point(Integer.parseInt(properties[Functions.MINER_COL]),
              Integer.parseInt(properties[Functions.MINER_ROW]));
-          NameTmp entity = pt.createMinerNotFull(properties[Functions.MINER_ID],
+          Miner_Not_Full entity = pt.createMinerNotFull(properties[Functions.MINER_ID],
              Integer.parseInt(properties[Functions.MINER_LIMIT]),
                   Integer.parseInt(properties[Functions.MINER_ACTION_PERIOD]),
              Integer.parseInt(properties[Functions.MINER_ANIMATION_PERIOD]),
@@ -106,10 +106,10 @@ final class WorldModel
        {
           Point pt = new Point(Integer.parseInt(properties[Functions.VEIN_COL]),
              Integer.parseInt(properties[Functions.VEIN_ROW]));
-          NameTmp entity = pt.createVein(properties[Functions.VEIN_ID],
+          Vein vein = pt.createVein(properties[Functions.VEIN_ID],
                   Integer.parseInt(properties[Functions.VEIN_ACTION_PERIOD]),
              imageStore.getImageList(Functions.VEIN_KEY));
-          tryAddEntity(entity);
+          tryAddEntity(vein);
        }
 
        return properties.length == Functions.VEIN_NUM_PROPERTIES;
@@ -122,9 +122,9 @@ final class WorldModel
        {
           Point pt = new Point(Integer.parseInt(properties[Functions.SMITH_COL]),
              Integer.parseInt(properties[Functions.SMITH_ROW]));
-          NameTmp entity = pt.createBlacksmith(properties[Functions.SMITH_ID],
+          Blacksmith blacksmith = pt.createBlacksmith(properties[Functions.SMITH_ID],
                   imageStore.getImageList(Functions.SMITH_KEY));
-          tryAddEntity(entity);
+          tryAddEntity(blacksmith);
        }
 
        return properties.length == Functions.SMITH_NUM_PROPERTIES;
@@ -137,10 +137,10 @@ final class WorldModel
        {
           Point pt = new Point(Integer.parseInt(properties[Functions.ORE_COL]),
              Integer.parseInt(properties[Functions.ORE_ROW]));
-          NameTmp entity = pt.createOre(properties[Functions.ORE_ID],
+          Entity ore = pt.createOre(properties[Functions.ORE_ID],
                   Integer.parseInt(properties[Functions.ORE_ACTION_PERIOD]),
              imageStore.getImageList(Functions.ORE_KEY));
-          tryAddEntity(entity);
+          tryAddEntity(ore);
        }
 
        return properties.length == Functions.ORE_NUM_PROPERTIES;
@@ -154,7 +154,7 @@ final class WorldModel
           Point pt = new Point(
              Integer.parseInt(properties[Functions.OBSTACLE_COL]),
              Integer.parseInt(properties[Functions.OBSTACLE_ROW]));
-          NameTmp entity = pt.createObstacle(properties[Functions.OBSTACLE_ID],
+          Obstacle entity = pt.createObstacle(properties[Functions.OBSTACLE_ID],
                   imageStore.getImageList(Functions.OBSTACLE_KEY));
           tryAddEntity(entity);
        }
@@ -188,7 +188,7 @@ final class WorldModel
       return this.background[pos.y][pos.x];
    }
 
-   public Optional<NameTmp> getOccupant(Point pos)
+   public Optional<Entity> getOccupant(Point pos)
    {
       if (isOccupied(pos))
       {
@@ -201,12 +201,12 @@ final class WorldModel
    }
 
    public void setOccupancyCell(Point pos,
-                                NameTmp entity)
+                                Entity entity)
    {
       this.occupancy[pos.y][pos.x] = entity;
    }
 
-   public NameTmp getOccupancyCell(Point pos)
+   public Entity getOccupancyCell(Point pos)
    {
       return this.occupancy[pos.y][pos.x];
    }
@@ -237,7 +237,7 @@ final class WorldModel
       if (withinBounds(pos)
          && this.getOccupancyCell(pos) != null)
       {
-         NameTmp entity = this.getOccupancyCell(pos);
+         Entity entity = this.getOccupancyCell(pos);
 
          /* this moves the entity just outside of the grid for
             debugging purposes */
@@ -247,12 +247,12 @@ final class WorldModel
       }
    }
 
-   public void removeEntity(NameTmp entity)
+   public void removeEntity(Entity entity)
    {
       this.removeEntityAt(entity.getPosition());
    }
 
-   public void moveEntity(NameTmp entity, Point pos)
+   public void moveEntity(Entity entity, Point pos)
    {
       Point oldPos = entity.getPosition();
       if (withinBounds(pos) && !pos.equals(oldPos))
@@ -268,7 +268,7 @@ final class WorldModel
          Assumes that there is no entity currently occupying the
          intended destination cell.
       */
-   public void addEntity(NameTmp entity)
+   public void addEntity(Entity entity)
    {
       if (withinBounds(entity.getPosition()))
       {
@@ -277,13 +277,13 @@ final class WorldModel
       }
    }
 
-   public Optional<NameTmp> findNearest(Point pos,
-                                        EntityKind kind)
+   public Optional<Entity> findNearest(Point pos,
+                                        Class kind)
    {
-      List<NameTmp> ofType = new LinkedList<>();
-      for (NameTmp entity : this.entities)
+      List<Entity> ofType = new LinkedList<>();
+      for (Entity entity : this.entities)
       {
-         if (entity.getKind() == kind)
+         if (entity.getClass() == kind)
          {
             ofType.add(entity);
          }
@@ -304,7 +304,7 @@ final class WorldModel
          pos.x >= 0 && pos.x < this.numCols;
    }
 
-   public void tryAddEntity(NameTmp entity)
+   public void tryAddEntity(Entity entity)
     {
        if (this.isOccupied(entity.getPosition()))
        {

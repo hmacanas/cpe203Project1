@@ -2,36 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5232f54b-fbaa-435e-8d3c-721809adff89" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Execute.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DESIGN.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DESIGN.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/given_uml/Interfaces.graphml" beforeDir="false" afterPath="$PROJECT_DIR$/given_uml/Interfaces.graphml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/given_uml/Methods.graphml" beforeDir="false" afterPath="$PROJECT_DIR$/given_uml/Methods.graphml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/macanas_henry_project1/DESIGN.txt" beforeDir="false" afterPath="$PROJECT_DIR$/macanas_henry_project1/DESIGN.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/macanas_henry_project1/Methods.graphml" beforeDir="false" afterPath="$PROJECT_DIR$/macanas_henry_project1/Methods.graphml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project1/Activity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project1/Activity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project1/ActivityEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project1/ActivityEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project1/Animation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project1/Animation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project1/AnimationEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project1/AnimationEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project1/BlackSmith.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project1/BlackSmith.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project1/Entity$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project1/Action.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project1/Activity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project1/ActivityEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project1/Animation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project1/AnimationEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project1/BlackSmith.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/project1/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project1/Entity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project1/EntityTmp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project1/Event.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project1/Event.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project1/EventScheduler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project1/EventScheduler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project1/Functions.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project1/Functions.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project1/EntityKind.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project1/Event.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project1/EventComparator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project1/EventScheduler$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project1/EventScheduler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project1/ExecuteActivity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project1/Functions.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project1/ImageStore.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project1/META-INF/project1.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project1/Miner_Full.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project1/Miner_Not_Full.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project1/Miner_Not_Full.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project1/NameTmp$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project1/NameTmp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project1/Obstacle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project1/Ore.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project1/Ore.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project1/Ore_Blob.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project1/Ore_Blob.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/project1/Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project1/Point.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project1/VirtualWorld.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project1/VirtualWorld.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project1/WorldModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project1/WorldModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project1/WorldView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project1/WorldView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project1/Quake.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project1/Quake.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project1/Vein.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project1/Vein.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project1/VirtualWorld.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project1/WorldModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project1/WorldView.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Activity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ActivityEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ActivityEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Animation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Animation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AnimationEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AnimationEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Blacksmith.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Blacksmith.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Event.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/EventScheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EventScheduler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Functions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Functions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Miner_Full.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Miner_Full.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Miner_Not_Full.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Miner_Not_Full.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/NameTmp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NameTmp.java" afterDir="false" />
@@ -57,17 +66,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/NameTmp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+            <state relative-caret-position="263">
+              <caret line="327" column="4" lean-forward="true" selection-start-line="327" selection-start-column="4" selection-end-line="327" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1494#1495#0" expanded="true" />
-                <element signature="e#1558#1559#0" expanded="true" />
-                <element signature="e#10090#10091#0" expanded="true" />
-                <element signature="e#10163#10164#0" expanded="true" />
+                <element signature="e#1513#1514#0" expanded="true" />
+                <element signature="e#1577#1578#0" expanded="true" />
+                <element signature="e#10140#10141#0" expanded="true" />
+                <element signature="e#10213#10214#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Blacksmith.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="40" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -76,47 +97,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/EventScheduler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="169" column="1" selection-start-line="169" selection-start-column="1" selection-end-line="169" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Ore.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="16" selection-start-column="16" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Ore_Blob.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="21" selection-start-column="21" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Entity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ActivityEntity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="39" selection-start-column="39" selection-end-column="39" />
+            <state relative-caret-position="202">
+              <caret line="68" column="24" selection-start-line="68" selection-start-column="24" selection-end-line="68" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -124,31 +106,47 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AnimationEntity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Blacksmith.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#714#715#0" expanded="true" />
-                <element signature="e#790#791#0" expanded="true" />
-              </folding>
+            <state>
+              <caret column="10" selection-start-column="10" selection-end-column="10" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Quake.java">
+        <entry file="file://$PROJECT_DIR$/src/Action.java">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="18" selection-start-column="18" selection-end-column="18" />
+              <caret column="10" selection-start-column="10" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Activity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Execute.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Entity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -156,8 +154,23 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Vein.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            <state relative-caret-position="525">
+              <caret line="57" column="24" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Obstacle.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="780">
+              <caret line="52" column="5" lean-forward="true" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -173,22 +186,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>findNear</find>
-      <find>draw</find>
-      <find>within</find>
-      <find>crea</find>
-      <find>createAnin</find>
-      <find>create</find>
-      <find>createActvit</find>
-      <find>createAc</find>
-      <find>execute</find>
-      <find>exec</find>
       <find>getIm</find>
       <find>cre</find>
       <find>animation</find>
       <find>try</find>
-      <find>add</find>
       <find>entity</find>
+      <find>tryAdd</find>
+      <find>addEntity</find>
+      <find>scheduleAc</find>
+      <find>mo</find>
+      <find>add</find>
+      <find>removeE</find>
+      <find>removeEn</find>
+      <find>movetofu</find>
+      <find>createAct</find>
+      <find>get</find>
+      <find>crea</find>
+      <find>getAn</find>
+      <find>getAc</find>
+      <find>createB</find>
+      <find>moveen</find>
+      <find>moveentity</find>
+      <find>moveEntity</find>
+      <find>sched</find>
+      <find>nextIm</find>
+      <find>nam</find>
+      <find>obsta</find>
+      <find>executeOreA</find>
+      <find>schedule</find>
+      <find>name</find>
+      <find>tryAddENt</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -203,40 +230,41 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/EventComparator.java" />
-        <option value="$PROJECT_DIR$/src/VirtualWorld.java" />
         <option value="$PROJECT_DIR$/src/Background.java" />
-        <option value="$PROJECT_DIR$/src/Event.java" />
         <option value="$PROJECT_DIR$/src/ImageStore.java" />
         <option value="$PROJECT_DIR$/src/Viewport.java" />
         <option value="$PROJECT_DIR$/src/Functions.java" />
-        <option value="$PROJECT_DIR$/src/Action.java" />
-        <option value="$PROJECT_DIR$/src/Activity.java" />
-        <option value="$PROJECT_DIR$/src/Animation.java" />
         <option value="$PROJECT_DIR$/src/ActionEntity.java" />
         <option value="$PROJECT_DIR$/src/ExecuteActivity.java" />
-        <option value="$PROJECT_DIR$/src/WorldView.java" />
         <option value="$PROJECT_DIR$/src/BlackSmith.java" />
         <option value="$PROJECT_DIR$/src/MinerFull.java" />
         <option value="$PROJECT_DIR$/src/EntityTmp.java" />
-        <option value="$PROJECT_DIR$/src/WorldModel.java" />
-        <option value="$PROJECT_DIR$/src/Point.java" />
-        <option value="$PROJECT_DIR$/src/Miner_Full.java" />
-        <option value="$PROJECT_DIR$/src/Miner_Not_Full.java" />
-        <option value="$PROJECT_DIR$/src/Obstacle.java" />
-        <option value="$PROJECT_DIR$/src/EventScheduler.java" />
-        <option value="$PROJECT_DIR$/src/Ore.java" />
-        <option value="$PROJECT_DIR$/src/Ore_Blob.java" />
+        <option value="$PROJECT_DIR$/src/VirtualWorld.java" />
+        <option value="$PROJECT_DIR$/src/WorldView.java" />
+        <option value="$PROJECT_DIR$/src/AnimationEntity.java" />
+        <option value="$PROJECT_DIR$/src/Event.java" />
+        <option value="$PROJECT_DIR$/src/ActivityEntity.java" />
+        <option value="$PROJECT_DIR$/src/Animation.java" />
+        <option value="$PROJECT_DIR$/src/Blacksmith.java" />
         <option value="$PROJECT_DIR$/src/Quake.java" />
         <option value="$PROJECT_DIR$/src/Vein.java" />
-        <option value="$PROJECT_DIR$/src/NameTmp.java" />
+        <option value="$PROJECT_DIR$/src/Ore.java" />
+        <option value="$PROJECT_DIR$/src/Miner_Full.java" />
+        <option value="$PROJECT_DIR$/src/Ore_Blob.java" />
+        <option value="$PROJECT_DIR$/src/WorldModel.java" />
+        <option value="$PROJECT_DIR$/src/Point.java" />
+        <option value="$PROJECT_DIR$/src/Action.java" />
+        <option value="$PROJECT_DIR$/src/Miner_Not_Full.java" />
+        <option value="$PROJECT_DIR$/src/EventScheduler.java" />
+        <option value="$PROJECT_DIR$/src/Execute.java" />
+        <option value="$PROJECT_DIR$/src/Activity.java" />
+        <option value="$PROJECT_DIR$/src/Obstacle.java" />
         <option value="$PROJECT_DIR$/src/Entity.java" />
-        <option value="$PROJECT_DIR$/src/ActivityEntity.java" />
-        <option value="$PROJECT_DIR$/src/AnimationEntity.java" />
-        <option value="$PROJECT_DIR$/src/Blacksmith.java" />
+        <option value="$PROJECT_DIR$/src/NameTmp.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="width" value="1680" />
     <option name="height" value="1050" />
   </component>
@@ -272,10 +300,11 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="instant.run" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -327,10 +356,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
+    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2899878" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2973138" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -339,15 +368,15 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32857144" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4993895" visible="true" weight="0.32857144" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4993895" weight="0.32857144" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32959184" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32959184" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50061053" side_tool="true" weight="0.32857144" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32959184" />
-      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49968454" weight="0.32941177" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32959184" />
+      <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.49968454" visible="true" weight="0.32857144" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50061053" weight="0.17040816" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -366,16 +395,16 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4993895" visible="true" weight="0.32857144" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32857144" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4993895" weight="0.32857144" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32959184" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32959184" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50061053" side_tool="true" weight="0.32857144" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32959184" />
-      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49968454" weight="0.32941177" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32959184" />
+      <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.49968454" weight="0.32941177" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50061053" weight="0.17040816" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -411,6 +440,20 @@
         </entry>
       </map>
     </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit, no alterations" />
@@ -432,6 +475,8 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ActionKind.java" />
+    <entry file="file://$PROJECT_DIR$/src/MinerFull.java" />
     <entry file="file://$PROJECT_DIR$/src/Viewport.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
@@ -439,52 +484,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ActionKind.java">
+    <entry file="file://$PROJECT_DIR$/src/Functions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="15">
+          <caret line="26" column="42" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ImageStore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ActivityEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VirtualWorld.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="32" column="50" lean-forward="true" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WorldView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Animation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="e#604#605#0" expanded="true" />
-            <element signature="e#633#634#0" expanded="true" />
-            <element signature="e#660#661#0" expanded="true" />
-            <element signature="e#694#695#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Action.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="10" selection-start-column="10" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Activity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="33" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
-          <folding>
-            <element signature="e#402#403#0" expanded="true" />
-            <element signature="e#431#432#0" expanded="true" />
-            <element signature="e#472#473#0" expanded="true" />
-            <element signature="e#505#506#0" expanded="true" />
-            <element signature="e#541#542#0" expanded="true" />
-            <element signature="e#569#570#0" expanded="true" />
-          </folding>
+          <caret column="12" selection-start-column="12" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/EventComparator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="30">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
           <folding>
             <element signature="e#139#140#0" expanded="true" />
             <element signature="e#195#196#0" expanded="true" />
@@ -499,6 +547,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/EntityKind.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Point.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1005">
+          <caret line="67" column="29" selection-start-line="67" selection-start-column="29" selection-end-line="67" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ExecuteActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -506,181 +571,161 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/WorldView.java">
+    <entry file="file://$PROJECT_DIR$/../../lab2/part2/src/PartTwoTestCases.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="46" column="22" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
+        <state relative-caret-position="165">
+          <caret line="27" column="43" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ImageStore.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="30" column="29" lean-forward="true" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/WorldModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="126" column="29" lean-forward="true" selection-start-line="126" selection-start-column="29" selection-end-line="126" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#6540#6541#0" expanded="true" />
-            <element signature="e#6589#6590#0" expanded="true" />
-            <element signature="e#7003#7004#0" expanded="true" />
-            <element signature="e#7051#7052#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Point.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="78" column="10" selection-start-line="78" selection-start-column="10" selection-end-line="78" selection-end-column="10" />
+        <state relative-caret-position="143">
+          <caret line="147" lean-forward="true" selection-start-line="147" selection-end-line="147" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Functions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-610">
-          <caret line="26" column="42" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="42" />
-          <folding>
-            <element signature="e#5107#5108#0" expanded="true" />
-            <element signature="e#5163#5164#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/VirtualWorld.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-720">
-          <caret line="79" column="24" selection-start-line="79" selection-start-column="24" selection-end-line="79" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EntityKind.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="5" selection-start-column="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MinerFull.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13" selection-start-column="13" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Miner_Full.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        <state relative-caret-position="1905">
+          <caret line="139" column="61" selection-start-line="139" selection-start-column="61" selection-end-line="139" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Miner_Not_Full.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="27" selection-start-column="27" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Obstacle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="21" selection-start-column="21" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EventScheduler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="169" column="1" selection-start-line="169" selection-start-column="1" selection-end-line="169" selection-end-column="1" />
+        <state relative-caret-position="315">
+          <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ore.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="16" selection-start-column="16" selection-end-column="16" />
+        <state relative-caret-position="990">
+          <caret line="69" selection-start-line="69" selection-end-line="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ore_Blob.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="21" selection-start-column="21" selection-end-column="21" />
+        <state relative-caret-position="1710">
+          <caret line="117" column="21" selection-start-line="117" selection-start-column="21" selection-end-line="117" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Quake.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="18" selection-start-column="18" selection-end-column="18" />
+        <state relative-caret-position="-172">
+          <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Vein.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/NameTmp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1494#1495#0" expanded="true" />
-            <element signature="e#1558#1559#0" expanded="true" />
-            <element signature="e#10090#10091#0" expanded="true" />
-            <element signature="e#10163#10164#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="525">
+          <caret line="57" column="24" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ActivityEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="39" selection-start-column="39" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AnimationEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        <state>
+          <caret column="10" selection-start-column="10" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Action.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="10" selection-start-column="10" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Execute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/EventScheduler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="68" column="24" selection-start-line="68" selection-start-column="24" selection-end-line="68" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Activity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Blacksmith.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="60">
+          <caret line="4" column="40" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#714#715#0" expanded="true" />
-            <element signature="e#790#791#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Obstacle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="52" column="5" lean-forward="true" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NameTmp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="327" column="4" lean-forward="true" selection-start-line="327" selection-start-column="4" selection-end-line="327" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1513#1514#0" expanded="true" />
+            <element signature="e#1577#1578#0" expanded="true" />
+            <element signature="e#10140#10141#0" expanded="true" />
+            <element signature="e#10213#10214#0" expanded="true" />
           </folding>
         </state>
       </provider>

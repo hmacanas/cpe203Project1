@@ -22,64 +22,63 @@ final class Point
       return deltaX * deltaX + deltaY * deltaY;
    }
 
-   public NameTmp createVein(String id, int actionPeriod,
+   public Vein createVein(String id, int actionPeriod,
                              List<PImage> images)
    {
-      return new NameTmp(EntityKind.VEIN, id, this, images, 0, 0,
+      return new Vein(id, this, images, 0, 0,
          actionPeriod, 0);
    }
 
-   public NameTmp createQuake(List<PImage> images)
+   public Quake createQuake(List<PImage> images)
    {
-      return new NameTmp(EntityKind.QUAKE, Functions.QUAKE_ID, this, images,
+      return new Quake(Functions.QUAKE_ID, this, images,
          0, 0, Functions.QUAKE_ACTION_PERIOD, Functions.QUAKE_ANIMATION_PERIOD);
    }
 
-   public NameTmp createOreBlob(String id,
+   public Ore_Blob createOreBlob(String id,
                                 int actionPeriod, int animationPeriod, List<PImage> images)
    {
-      return new NameTmp(EntityKind.ORE_BLOB, id, this, images,
+      return new Ore_Blob(id, this, images,
             0, 0, actionPeriod, animationPeriod);
    }
 
-   public NameTmp createOre(String id, int actionPeriod,
+   public Ore createOre(String id, int actionPeriod,
                             List<PImage> images)
    {
-      return new NameTmp(EntityKind.ORE, id, this, images, 0, 0,
+      return new Ore(id, this, images, 0, 0,
          actionPeriod, 0);
    }
 
-   public NameTmp createMinerNotFull(String id, int resourceLimit,
+   public Miner_Not_Full createMinerNotFull(String id, int resourceLimit,
                                      int actionPeriod, int animationPeriod,
                                      List<PImage> images)
    {
-      return new NameTmp(EntityKind.MINER_NOT_FULL, id, this, images,
+      return new Miner_Not_Full(id, this, images,
          resourceLimit, 0, actionPeriod, animationPeriod);
    }
 
-   public NameTmp createObstacle(String id,
+   public Obstacle createObstacle(String id,
                                  List<PImage> images)
    {
-      return new NameTmp(EntityKind.OBSTACLE, id, this, images,
+      return new Obstacle(id, this, images,
          0, 0, 0, 0);
    }
 
-   public NameTmp createMinerFull(String id, int resourceLimit,
+   public Miner_Full createMinerFull(String id, int resourceLimit,
                                   int actionPeriod, int animationPeriod,
                                   List<PImage> images)
    {
-      return new NameTmp(EntityKind.MINER_FULL, id, this, images,
+      return new Miner_Full(id, this, images,
          resourceLimit, resourceLimit, actionPeriod, animationPeriod);
    }
 
-   public NameTmp createBlacksmith(String id,
+   public Blacksmith createBlacksmith(String id,
                                    List<PImage> images)
     {
-       return new NameTmp(EntityKind.BLACKSMITH, id, this, images,
-          0, 0, 0, 0);
+       return new Blacksmith(id, this, images);
     }
 
-    public Optional<NameTmp> nearestEntity(List<NameTmp> entities)
+    public Optional<Entity> nearestEntity(List<Entity> entities)
    {
       if (entities.isEmpty())
       {
@@ -87,10 +86,10 @@ final class Point
       }
       else
       {
-         NameTmp nearest = entities.get(0);
+         Entity nearest = entities.get(0);
          int nearestDistance = Point.distanceSquared(nearest.getPosition(), this);
 
-         for (NameTmp other : entities)
+         for (Entity other : entities)
          {
             int otherDistance = Point.distanceSquared(other.getPosition(), this);
 
