@@ -10,10 +10,7 @@ public class Ore implements ActivityEntity
     private Point position;
     private final List<PImage> images;
     private int imageIndex;
-    private final int resourceLimit;
-    private int resourceCount;
     private final int actionPeriod;
-    private final int animationPeriod;
 
     public Ore(String id, Point position,
                    List<PImage> images, int resourceLimit, int resourceCount,
@@ -23,10 +20,7 @@ public class Ore implements ActivityEntity
         this.position = position;
         this.images = images;
         this.imageIndex = 0;
-        this.resourceLimit = resourceLimit;
-        this.resourceCount = resourceCount;
         this.actionPeriod = actionPeriod;
-        this.animationPeriod = animationPeriod;
     }
 
     public int getActionPeriod(){return actionPeriod;}

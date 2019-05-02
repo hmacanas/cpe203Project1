@@ -8,10 +8,6 @@ final class Obstacle implements Entity
     private Point position;
     private final List<PImage> images;
     private int imageIndex;
-    private final int resourceLimit;
-    private int resourceCount;
-    private final int actionPeriod;
-    private final int animationPeriod;
 
     public Obstacle(String id, Point position,
                    List<PImage> images, int resourceLimit, int resourceCount,
@@ -21,13 +17,7 @@ final class Obstacle implements Entity
         this.position = position;
         this.images = images;
         this.imageIndex = 0;
-        this.resourceLimit = resourceLimit;
-        this.resourceCount = resourceCount;
-        this.actionPeriod = actionPeriod;
-        this.animationPeriod = animationPeriod;
     }
-
-    public int getActionPeriod(){return actionPeriod;}
 
     public Point getPosition(){return this.position;}
 
@@ -77,11 +67,5 @@ final class Obstacle implements Entity
     public void nextImage()
     {
         this.imageIndex = (this.imageIndex + 1) % this.images.size();
-    }
-
-    public int getAnimationPeriod() {
-        throw new UnsupportedOperationException(
-                String.format("getAnimationPeriod not supported for %s",
-                        this.getClass()));
     }
 }
