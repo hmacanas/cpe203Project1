@@ -15,7 +15,7 @@ final class WorldModel
       this.numRows = numRows;
       this.numCols = numCols;
       this.background = new Background[numRows][numCols];
-      this.occupancy = new NameTmp[numRows][numCols];
+      this.occupancy = new Entity[numRows][numCols];
       this.entities = new HashSet<>();
 
       for (int row = 0; row < numRows; row++)

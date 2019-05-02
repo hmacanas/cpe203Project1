@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 
-final class Miner_Full implements Entity, Execute {
+final class Miner_Full implements ActivityEntity, AnimationEntity {
     private final String id;
     private Point position;
     private final List<PImage> images;

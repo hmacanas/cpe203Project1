@@ -11,6 +11,6 @@ interface Entity
 //    Activity createActivityAction(WorldModel world, ImageStore imageStore);
 //    int getActionPeriod();
 //    Animation createAnimationAction(int repeatCount);
-    int getAnimationPeriod();
-    void nextImage();
+//    int getAnimationPeriod();
+//    void nextImage();
 }

@@ -3,7 +3,7 @@ import processing.core.PImage;
 import java.util.List;
 import java.util.Optional;
 
-public class Ore implements Entity, Execute
+public class Ore implements ActivityEntity
 {
 
     private final String id;
@@ -45,11 +45,6 @@ public class Ore implements Entity, Execute
         return new Activity(this, world, imageStore, 0);
     }
 
-    public Animation createAnimationAction(int repeatCount)
-    {
-        return new Animation(this, null, null, repeatCount);
-    }
-
     public void executeActivity(WorldModel world,
                                    ImageStore imageStore, EventScheduler scheduler)
     {
@@ -71,9 +66,5 @@ public class Ore implements Entity, Execute
     public void nextImage()
     {
         this.imageIndex = (this.imageIndex + 1) % this.images.size();
-    }
-
-    public int getAnimationPeriod() {
-        return this.animationPeriod;
     }
 }

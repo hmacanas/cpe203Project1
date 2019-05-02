@@ -3,16 +3,13 @@ import java.util.Optional;
 
 import processing.core.PImage;
 
-final class Vein implements Entity, Execute
+final class Vein implements ActivityEntity
 {
     private final String id;
     private Point position;
     private final List<PImage> images;
     private int imageIndex;
-    private final int resourceLimit;
-    private int resourceCount;
     private final int actionPeriod;
-    private final int animationPeriod;
 
     public Vein(String id, Point position,
                    List<PImage> images, int resourceLimit, int resourceCount,
@@ -22,10 +19,7 @@ final class Vein implements Entity, Execute
         this.position = position;
         this.images = images;
         this.imageIndex = 0;
-        this.resourceLimit = resourceLimit;
-        this.resourceCount = resourceCount;
         this.actionPeriod = actionPeriod;
-        this.animationPeriod = animationPeriod;
     }
 
 
@@ -43,11 +37,6 @@ final class Vein implements Entity, Execute
                                          ImageStore imageStore)
     {
         return new Activity(this, world, imageStore, 0);
-    }
-
-    public Animation createAnimationAction(int repeatCount)
-    {
-        return new Animation(this, null, null, repeatCount);
     }
 
     public void executeActivity(WorldModel world,
@@ -74,11 +63,6 @@ final class Vein implements Entity, Execute
     public void nextImage()
     {
         this.imageIndex = (this.imageIndex + 1) % this.images.size();
-    }
-
-    public int getAnimationPeriod()
-    {
-        return this.animationPeriod;
     }
 
 }

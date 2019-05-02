@@ -84,9 +84,9 @@ final class Functions
          return ((Background)entity).getImages()
             .get(((Background)entity).getImageIndex());
       }
-      else if (entity instanceof NameTmp)
+      else if (entity instanceof Entity)
       {
-         return ((NameTmp)entity).getImages().get(((NameTmp)entity).getImageIndex());
+         return ((Entity)entity).getImages().get(((Entity)entity).getImageIndex());
       }
       else
       {

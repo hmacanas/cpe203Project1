@@ -3,7 +3,7 @@ import java.util.*;
 final class EventScheduler
 {
    private PriorityQueue<Event> eventQueue;
-   private Map<Entity, List<Event>> pendingEvents;
+   private Map<ActivityEntity, List<Event>> pendingEvents;
    private final double timeScale;
 
    public EventScheduler(double timeScale)
@@ -49,7 +49,7 @@ final class EventScheduler
       }
    }
 
-   public void scheduleEvent(Entity entity, Action action, long afterPeriod)
+   public void scheduleEvent(ActivityEntity entity, Action action, long afterPeriod)
    {
       long time = System.currentTimeMillis() +
          (long)(afterPeriod * this.timeScale);
@@ -80,7 +80,7 @@ final class EventScheduler
       }
    }
 
-   public void scheduleActions(WorldModel world, ImageStore imageStore, Entity entity)
+   public void scheduleActions(WorldModel world, ImageStore imageStore, AnimationEntity entity)
    {
          if (entity instanceof Miner_Full) {
                scheduleEvent(entity,

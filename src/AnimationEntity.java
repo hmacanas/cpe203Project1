@@ -1,5 +1,5 @@
-interface AnimationEntity extends Entity
+interface AnimationEntity extends ActivityEntity
 {
-    void createAnimationAction();
+    Animation createAnimationAction(int repeatCount);
     int getAnimationPeriod();
 }

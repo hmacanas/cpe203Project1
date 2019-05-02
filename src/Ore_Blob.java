@@ -3,7 +3,7 @@ import java.util.Optional;
 
 import processing.core.PImage;
 
-final class Ore_Blob implements Entity, Execute
+final class Ore_Blob implements ActivityEntity, AnimationEntity
 {
     private final String id;
     private Point position;
