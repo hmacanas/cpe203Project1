@@ -2,15 +2,30 @@ import processing.core.PImage;
 
 import java.util.List;
 
-interface Entity
+public abstract class Entity
 {
-    Point getPosition();
-    void setPosition(Point newPt);
-    List<PImage> getImages();
-    int getImageIndex();
-//    Activity createActivityAction(WorldModel world, ImageStore imageStore);
-//    int getActionPeriod();
-//    Animation createAnimationAction(int repeatCount);
-//    int getAnimationPeriod();
-//    void nextImage();
+    private final String id;
+    private Point position;
+    private final List<PImage> images;
+    private int imageIndex;
+
+    public Entity(String id, Point position, List<PImage> images)
+    {
+        this.id = id;
+        this.position = position;
+        this.images = images;
+        this.imageIndex = 0;
+    }
+
+    public Point getPosition(){return this.position;}
+
+    public void setPosition(Point newPt) { this.position = newPt;}
+
+    public List<PImage> getImages(){return this.images;}
+
+    public int getImageIndex(){return this.imageIndex;}
+
+    public void setImageIndex(int imageIndex) {
+        this.imageIndex = imageIndex;
+    }
 }
