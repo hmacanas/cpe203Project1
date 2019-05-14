@@ -25,28 +25,26 @@ final class Point
    public Vein createVein(String id, int actionPeriod,
                              List<PImage> images)
    {
-      return new Vein(id, this, images, 0, 0,
-         actionPeriod, 0);
+      return new Vein(id, this, images, 0, actionPeriod);
    }
 
    public Quake createQuake(List<PImage> images)
    {
       return new Quake(Functions.QUAKE_ID, this, images,
-         0, 0, Functions.QUAKE_ACTION_PERIOD, Functions.QUAKE_ANIMATION_PERIOD);
+         0, Functions.QUAKE_ACTION_PERIOD, Functions.QUAKE_ANIMATION_PERIOD);
    }
 
    public Ore_Blob createOreBlob(String id,
                                 int actionPeriod, int animationPeriod, List<PImage> images)
    {
       return new Ore_Blob(id, this, images,
-            0, 0, actionPeriod, animationPeriod);
+            0, 0, actionPeriod);
    }
 
    public Ore createOre(String id, int actionPeriod,
                             List<PImage> images)
    {
-      return new Ore(id, this, images, 0, 0,
-         actionPeriod, 0);
+      return new Ore(id, this, images, 0, 0);
    }
 
    public Miner_Not_Full createMinerNotFull(String id, int resourceLimit,
@@ -60,8 +58,7 @@ final class Point
    public Obstacle createObstacle(String id,
                                  List<PImage> images)
    {
-      return new Obstacle(id, this, images,
-         0, 0, 0, 0);
+      return new Obstacle(id, this, images);
    }
 
    public Miner_Full createMinerFull(String id, int resourceLimit,

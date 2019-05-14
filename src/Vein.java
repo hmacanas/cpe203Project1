@@ -3,35 +3,19 @@ import java.util.Optional;
 
 import processing.core.PImage;
 
-final class Vein implements ActivityEntity, Schedulable
+final class Vein extends ActivityEntity implements Schedulable
 {
-    private final String id;
-    private Point position;
-    private final List<PImage> images;
-    private int imageIndex;
+
     private final int actionPeriod;
 
-    public Vein(String id, Point position,
-                   List<PImage> images, int resourceLimit, int resourceCount,
-                   int actionPeriod, int animationPeriod)
-    {
-        this.id = id;
-        this.position = position;
-        this.images = images;
-        this.imageIndex = 0;
+    public Vein(String id, Point position, List<PImage> images, int imageIndex, int actionPeriod) {
+        super(id, position, images, imageIndex);
         this.actionPeriod = actionPeriod;
     }
 
-
-    public int getActionPeriod(){return actionPeriod;}
-
-    public Point getPosition(){return this.position;}
-
-    public void setPosition(Point newPt) { this.position = newPt;}
-
-    public List<PImage> getImages(){return this.images;}
-
-    public int getImageIndex(){return this.imageIndex;}
+    public int getActionPeriod() {
+        return actionPeriod;
+    }
 
     public Activity createActivityAction(WorldModel world,
                                          ImageStore imageStore)
@@ -42,11 +26,11 @@ final class Vein implements ActivityEntity, Schedulable
     public void executeActivity(WorldModel world,
                                     ImageStore imageStore, EventScheduler scheduler)
     {
-        Optional<Point> openPt = this.position.findOpenAround(world);
+        Optional<Point> openPt = super.getPosition().findOpenAround(world);
 
         if (openPt.isPresent())
         {
-            Ore ore = openPt.get().createOre(Functions.ORE_ID_PREFIX + this.id,
+            Ore ore = openPt.get().createOre(Functions.ORE_ID_PREFIX + super.getId(),
                     Functions.ORE_CORRUPT_MIN +
                             Functions.rand.nextInt(Functions.ORE_CORRUPT_MAX - Functions.ORE_CORRUPT_MIN),
                     imageStore.getImageList(Functions.ORE_KEY));
@@ -62,7 +46,7 @@ final class Vein implements ActivityEntity, Schedulable
 
     public void nextImage()
     {
-        this.imageIndex = (this.imageIndex + 1) % this.images.size();
+        super.setImageIndex((super.getImageIndex() + 1) % super.getImages().size());
     }
 
     public void scheduleAllEvents(EventScheduler scheduler, WorldModel world, ImageStore imageStore)

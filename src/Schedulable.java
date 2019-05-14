@@ -1,3 +1,3 @@
-public interface Schedulable extends Entity {
+public interface Schedulable {
     void scheduleAllEvents(EventScheduler scheduler, WorldModel world, ImageStore imageStore);
 }

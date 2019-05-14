@@ -3,35 +3,19 @@ import processing.core.PImage;
 import java.util.List;
 import java.util.Optional;
 
-public class Ore implements ActivityEntity, Schedulable
+public class Ore extends ActivityEntity implements Schedulable
 {
 
-    private final String id;
-    private Point position;
-    private final List<PImage> images;
-    private int imageIndex;
     private final int actionPeriod;
 
-    public Ore(String id, Point position,
-                   List<PImage> images, int resourceLimit, int resourceCount,
-                   int actionPeriod, int animationPeriod)
-    {
-        this.id = id;
-        this.position = position;
-        this.images = images;
-        this.imageIndex = 0;
+    public Ore(String id, Point position, List<PImage> images, int imageIndex, int actionPeriod) {
+        super(id, position, images, imageIndex);
         this.actionPeriod = actionPeriod;
     }
 
-    public int getActionPeriod(){return actionPeriod;}
-
-    public Point getPosition(){return this.position;}
-
-    public void setPosition(Point newPt) { this.position = newPt;}
-
-    public List<PImage> getImages(){return this.images;}
-
-    public int getImageIndex(){return this.imageIndex;}
+    public int getActionPeriod() {
+        return actionPeriod;
+    }
 
     public Activity createActivityAction(WorldModel world,
                                          ImageStore imageStore)
@@ -42,12 +26,12 @@ public class Ore implements ActivityEntity, Schedulable
     public void executeActivity(WorldModel world,
                                    ImageStore imageStore, EventScheduler scheduler)
     {
-        Point pos = this.position;  // store current position before removing
+        Point pos = super.getPosition();  // store current position before removing
 
         world.removeEntity(this);
         scheduler.unscheduleAllEvents(this);
 
-        Ore_Blob blob = pos.createOreBlob(this.id + Functions.BLOB_ID_SUFFIX,
+        Ore_Blob blob = pos.createOreBlob(super.getId() + Functions.BLOB_ID_SUFFIX,
                 this.actionPeriod / Functions.BLOB_PERIOD_SCALE,
                 Functions.BLOB_ANIMATION_MIN +
                         Functions.rand.nextInt(Functions.BLOB_ANIMATION_MAX - Functions.BLOB_ANIMATION_MIN),
@@ -59,7 +43,7 @@ public class Ore implements ActivityEntity, Schedulable
 
     public void nextImage()
     {
-        this.imageIndex = (this.imageIndex + 1) % this.images.size();
+        super.setImageIndex((super.getImageIndex() + 1) % super.getImages().size());
     }
 
     public void scheduleAllEvents(EventScheduler scheduler, WorldModel world, ImageStore imageStore)

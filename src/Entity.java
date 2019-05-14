@@ -28,4 +28,8 @@ public abstract class Entity
     public void setImageIndex(int imageIndex) {
         this.imageIndex = imageIndex;
     }
+
+    public String getId() {
+        return id;
+    }
 }

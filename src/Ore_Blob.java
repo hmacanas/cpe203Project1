@@ -3,37 +3,21 @@ import java.util.Optional;
 
 import processing.core.PImage;
 
-final class Ore_Blob implements ActivityEntity, AnimationEntity, Schedulable
+final class Ore_Blob extends AnimationEntity implements Schedulable
 {
-    private final String id;
-    private Point position;
-    private final List<PImage> images;
-    private int imageIndex;
     private final int actionPeriod;
     private final int animationPeriod;
 
-    public Ore_Blob(String id, Point position,
-                   List<PImage> images, int resourceLimit, int resourceCount,
-                   int actionPeriod, int animationPeriod)
-    {
-        this.id = id;
-        this.position = position;
-        this.images = images;
-        this.imageIndex = 0;
+    public Ore_Blob(String id, Point position, List<PImage> images, int imageIndex, int actionPeriod, int animationPeriod) {
+        super(id, position, images, imageIndex);
         this.actionPeriod = actionPeriod;
         this.animationPeriod = animationPeriod;
     }
 
-    public int getActionPeriod(){return actionPeriod;}
-
-    public Point getPosition(){return this.position;}
-
-    public void setPosition(Point newPt) { this.position = newPt;}
-
-    public List<PImage> getImages(){return this.images;}
-
-    public int getImageIndex(){return this.imageIndex;}
-
+    public int getActionPeriod() {
+        return actionPeriod;
+    }
+    
     public Activity createActivityAction(WorldModel world,
                                          ImageStore imageStore)
     {
@@ -48,23 +32,23 @@ final class Ore_Blob implements ActivityEntity, AnimationEntity, Schedulable
     public Point nextPositionOreBlob(WorldModel world,
                                      Point destPos)
     {
-        int horiz = Integer.signum(destPos.x - this.position.x);
-        Point newPos = new Point(this.position.x + horiz,
-                this.position.y);
+        int horiz = Integer.signum(destPos.x - super.getPosition().x);
+        Point newPos = new Point(super.getPosition().x + horiz,
+                super.getPosition().y);
 
         Optional<Entity> occupant = world.getOccupant(newPos);
 
         if (horiz == 0 ||
                 (occupant.isPresent() && !(occupant.get().getClass() == Ore.class)))
         {
-            int vert = Integer.signum(destPos.y - this.position.y);
-            newPos = new Point(this.position.x, this.position.y + vert);
+            int vert = Integer.signum(destPos.y - super.getPosition().y);
+            newPos = new Point(super.getPosition().x, super.getPosition().y + vert);
             occupant = world.getOccupant(newPos);
 
             if (vert == 0 ||
                     (occupant.isPresent() && !(occupant.get().getClass() == Ore.class)))
             {
-                newPos = this.position;
+                newPos = super.getPosition();
             }
         }
 
@@ -74,7 +58,7 @@ final class Ore_Blob implements ActivityEntity, AnimationEntity, Schedulable
     public boolean moveToOreBlob(WorldModel world,
                                  Entity target, EventScheduler scheduler)
     {
-        if (Point.adjacent(this.position, target.getPosition()))
+        if (Point.adjacent(super.getPosition(), target.getPosition()))
         {
             world.removeEntity(target);
             scheduler.unscheduleAllEvents(target);
@@ -84,7 +68,7 @@ final class Ore_Blob implements ActivityEntity, AnimationEntity, Schedulable
         {
             Point nextPos = this.nextPositionOreBlob(world, target.getPosition());
 
-            if (!this.position.equals(nextPos))
+            if (!super.getPosition().equals(nextPos))
             {
                 Optional<Entity> occupant = world.getOccupant(nextPos);
                 if (occupant.isPresent())
@@ -102,7 +86,7 @@ final class Ore_Blob implements ActivityEntity, AnimationEntity, Schedulable
                                        ImageStore imageStore, EventScheduler scheduler)
     {
         Optional<Entity> blobTarget = world.findNearest(
-                this.position, Ore.class);
+                super.getPosition(), Ore.class);
         long nextPeriod = this.actionPeriod;
 
         if (blobTarget.isPresent())
@@ -128,7 +112,7 @@ final class Ore_Blob implements ActivityEntity, AnimationEntity, Schedulable
 
     public void nextImage()
     {
-        this.imageIndex = (this.imageIndex + 1) % this.images.size();
+        super.setImageIndex((super.getImageIndex() + 1) % super.getImages().size());
     }
 
     public int getAnimationPeriod()
