@@ -29,5 +29,12 @@ public abstract class ActivityEntity extends Entity
         super.setImageIndex((super.getImageIndex() + 1) % super.getImages().size());
     }
 
+    public void scheduleAllEvents(EventScheduler scheduler, WorldModel world, ImageStore imageStore)
+    {
+        scheduler.scheduleEvent(this,
+                this.createActivityAction(world, imageStore),
+                this.getActionPeriod());
+    }
+
 
 }

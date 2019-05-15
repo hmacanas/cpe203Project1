@@ -27,11 +27,4 @@ public class Ore extends ActivityEntity implements Schedulable
         world.addEntity(blob);
         scheduler.scheduleActions(world, imageStore, blob);
     }
-
-    public void scheduleAllEvents(EventScheduler scheduler, WorldModel world, ImageStore imageStore)
-    {
-        scheduler.scheduleEvent(this,
-                this.createActivityAction(world, imageStore),
-                this.getActionPeriod());
-    }
 }

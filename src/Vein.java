@@ -31,11 +31,4 @@ final class Vein extends ActivityEntity implements Schedulable
                 super.getActionPeriod());
     }
 
-    public void scheduleAllEvents(EventScheduler scheduler, WorldModel world, ImageStore imageStore)
-    {
-        scheduler.scheduleEvent(this,
-                this.createActivityAction(world, imageStore),
-                this.getActionPeriod());
-    }
-
 }
