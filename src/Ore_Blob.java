@@ -5,28 +5,9 @@ import processing.core.PImage;
 
 final class Ore_Blob extends AnimationEntity implements Schedulable
 {
-    private final int actionPeriod;
-    private final int animationPeriod;
 
     public Ore_Blob(String id, Point position, List<PImage> images, int actionPeriod, int animationPeriod) {
-        super(id, position, images);
-        this.actionPeriod = actionPeriod;
-        this.animationPeriod = animationPeriod;
-    }
-
-    public int getActionPeriod() {
-        return actionPeriod;
-    }
-    
-    public Activity createActivityAction(WorldModel world,
-                                         ImageStore imageStore)
-    {
-        return new Activity(this, world, imageStore, 0);
-    }
-
-    public Animation createAnimationAction(int repeatCount)
-    {
-        return new Animation(this, null, null, repeatCount);
+        super(id, position, images, actionPeriod, animationPeriod);
     }
 
     public Point nextPositionOreBlob(WorldModel world,
@@ -87,7 +68,7 @@ final class Ore_Blob extends AnimationEntity implements Schedulable
     {
         Optional<Entity> blobTarget = world.findNearest(
                 super.getPosition(), Ore.class);
-        long nextPeriod = this.actionPeriod;
+        long nextPeriod = super.getActionPeriod();
 
         if (blobTarget.isPresent())
         {
@@ -99,7 +80,7 @@ final class Ore_Blob extends AnimationEntity implements Schedulable
                         imageStore.getImageList(Functions.QUAKE_KEY));
 
                 world.addEntity(quake);
-                nextPeriod += this.actionPeriod;
+                nextPeriod += super.getActionPeriod();
                 scheduler.scheduleActions(world, imageStore, quake);
             }
         }
@@ -107,17 +88,6 @@ final class Ore_Blob extends AnimationEntity implements Schedulable
         scheduler.scheduleEvent(this,
                 this.createActivityAction(world, imageStore),
                 nextPeriod);
-    }
-
-
-    public void nextImage()
-    {
-        super.setImageIndex((super.getImageIndex() + 1) % super.getImages().size());
-    }
-
-    public int getAnimationPeriod()
-    {
-        return this.animationPeriod;
     }
 
     public void scheduleAllEvents(EventScheduler scheduler, WorldModel world, ImageStore imageStore)

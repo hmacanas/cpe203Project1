@@ -4,15 +4,23 @@ import java.util.List;
 
 public abstract class AnimationEntity extends ActivityEntity
 {
-    public AnimationEntity(String id, Point position, List<PImage> images) {
-        super(id, position, images);
+    private int animationPeriod;
+    public AnimationEntity(String id, Point position, List<PImage> images, int actionPeriod, int animationPeriod) {
+        super(id, position, images, actionPeriod);
+        this.animationPeriod = animationPeriod;
     }
-
-    public abstract Animation createAnimationAction(int repeatCount);
-    public abstract int getAnimationPeriod();
 
     public void nextImage()
     {
         super.setImageIndex((super.getImageIndex() + 1) % super.getImages().size());
+    }
+
+    public Animation createAnimationAction(int repeatCount)
+    {
+        return new Animation(this, null, null, repeatCount);
+    }
+
+    public int getAnimationPeriod() {
+        return this.animationPeriod;
     }
 }

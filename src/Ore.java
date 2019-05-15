@@ -6,21 +6,8 @@ import java.util.Optional;
 public class Ore extends ActivityEntity implements Schedulable
 {
 
-    private final int actionPeriod;
-
     public Ore(String id, Point position, List<PImage> images, int actionPeriod) {
-        super(id, position, images);
-        this.actionPeriod = actionPeriod;
-    }
-
-    public int getActionPeriod() {
-        return actionPeriod;
-    }
-
-    public Activity createActivityAction(WorldModel world,
-                                         ImageStore imageStore)
-    {
-        return new Activity(this, world, imageStore, 0);
+        super(id, position, images, actionPeriod);
     }
 
     public void executeActivity(WorldModel world,
@@ -32,18 +19,13 @@ public class Ore extends ActivityEntity implements Schedulable
         scheduler.unscheduleAllEvents(this);
 
         Ore_Blob blob = pos.createOreBlob(super.getId() + Functions.BLOB_ID_SUFFIX,
-                this.actionPeriod / Functions.BLOB_PERIOD_SCALE,
+                super.getActionPeriod() / Functions.BLOB_PERIOD_SCALE,
                 Functions.BLOB_ANIMATION_MIN +
                         Functions.rand.nextInt(Functions.BLOB_ANIMATION_MAX - Functions.BLOB_ANIMATION_MIN),
                 imageStore.getImageList(Functions.BLOB_KEY));
 
         world.addEntity(blob);
         scheduler.scheduleActions(world, imageStore, blob);
-    }
-
-    public void nextImage()
-    {
-        super.setImageIndex((super.getImageIndex() + 1) % super.getImages().size());
     }
 
     public void scheduleAllEvents(EventScheduler scheduler, WorldModel world, ImageStore imageStore)

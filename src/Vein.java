@@ -6,21 +6,9 @@ import processing.core.PImage;
 final class Vein extends ActivityEntity implements Schedulable
 {
 
-    private final int actionPeriod;
 
     public Vein(String id, Point position, List<PImage> images, int actionPeriod) {
-        super(id, position, images);
-        this.actionPeriod = actionPeriod;
-    }
-
-    public int getActionPeriod() {
-        return actionPeriod;
-    }
-
-    public Activity createActivityAction(WorldModel world,
-                                         ImageStore imageStore)
-    {
-        return new Activity(this, world, imageStore, 0);
+        super(id, position, images, actionPeriod);
     }
 
     public void executeActivity(WorldModel world,
@@ -40,13 +28,7 @@ final class Vein extends ActivityEntity implements Schedulable
 
         scheduler.scheduleEvent(this,
                 this.createActivityAction(world, imageStore),
-                this.actionPeriod);
-    }
-
-
-    public void nextImage()
-    {
-        super.setImageIndex((super.getImageIndex() + 1) % super.getImages().size());
+                super.getActionPeriod());
     }
 
     public void scheduleAllEvents(EventScheduler scheduler, WorldModel world, ImageStore imageStore)

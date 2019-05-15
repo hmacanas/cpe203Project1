@@ -7,29 +7,10 @@ final class Miner_Not_Full extends AnimationEntity implements Schedulable
 {
     private final int resourceLimit;
     private int resourceCount;
-    private final int actionPeriod;
-    private final int animationPeriod;
 
     public Miner_Not_Full(String id, Point position, List<PImage> images, int resourceLimit, int actionPeriod, int animationPeriod) {
-        super(id, position, images);
+        super(id, position, images, actionPeriod, animationPeriod);
         this.resourceLimit = resourceLimit;
-        this.actionPeriod = actionPeriod;
-        this.animationPeriod = animationPeriod;
-    }
-
-    public Activity createActivityAction(WorldModel world,
-                                         ImageStore imageStore)
-    {
-        return new Activity(this, world, imageStore, 0);
-    }
-
-    public Animation createAnimationAction(int repeatCount)
-    {
-        return new Animation(this, null, null, repeatCount);
-    }
-
-    public int getActionPeriod() {
-        return actionPeriod;
     }
 
     public Point nextPositionMiner(WorldModel world,
@@ -90,7 +71,7 @@ final class Miner_Not_Full extends AnimationEntity implements Schedulable
         if (this.resourceCount >= this.resourceLimit)
         {
             Miner_Full miner = super.getPosition().createMinerFull(super.getId(), this.resourceLimit,
-                    this.actionPeriod, this.animationPeriod,
+                    super.getActionPeriod(), super.getAnimationPeriod(),
                     super.getImages());
 
             world.removeEntity(this);
@@ -116,17 +97,8 @@ final class Miner_Not_Full extends AnimationEntity implements Schedulable
         {
             scheduler.scheduleEvent(this,
                     this.createActivityAction(world, imageStore),
-                    this.actionPeriod);
+                    super.getActionPeriod());
         }
-    }
-
-    public void nextImage()
-    {
-        super.setImageIndex((super.getImageIndex() + 1) % super.getImages().size());
-    }
-
-    public int getAnimationPeriod() {
-        return this.animationPeriod;
     }
 
     public void scheduleAllEvents(EventScheduler scheduler, WorldModel world, ImageStore imageStore)
