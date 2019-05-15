@@ -4,14 +4,10 @@ import java.util.List;
 
 public abstract class ActivityEntity extends Entity
 {
-    private int imageIndex;
-    private final List<PImage> images;
 
-    public ActivityEntity(String id, Point position, List<PImage> images, int imageIndex)
+    public ActivityEntity(String id, Point position, List<PImage> images)
     {
-        super(id, position, images);
-        this.images = images;
-        this.imageIndex = imageIndex;
+        super(id, position, images);;
     }
 
     public Activity createActivityAction(WorldModel world,
@@ -26,6 +22,6 @@ public abstract class ActivityEntity extends Entity
 
     public void nextImage()
     {
-        this.imageIndex = (this.imageIndex + 1) % this.images.size();
+        super.setImageIndex((super.getImageIndex() + 1) % super.getImages().size());
     }
 }

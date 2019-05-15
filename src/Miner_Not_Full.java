@@ -10,8 +10,8 @@ final class Miner_Not_Full extends AnimationEntity implements Schedulable
     private final int actionPeriod;
     private final int animationPeriod;
 
-    public Miner_Not_Full(String id, Point position, List<PImage> images, int imageIndex, int resourceLimit, int actionPeriod, int animationPeriod) {
-        super(id, position, images, imageIndex);
+    public Miner_Not_Full(String id, Point position, List<PImage> images, int resourceLimit, int actionPeriod, int animationPeriod) {
+        super(id, position, images);
         this.resourceLimit = resourceLimit;
         this.actionPeriod = actionPeriod;
         this.animationPeriod = animationPeriod;

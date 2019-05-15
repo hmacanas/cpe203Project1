@@ -8,8 +8,8 @@ public class Ore extends ActivityEntity implements Schedulable
 
     private final int actionPeriod;
 
-    public Ore(String id, Point position, List<PImage> images, int imageIndex, int actionPeriod) {
-        super(id, position, images, imageIndex);
+    public Ore(String id, Point position, List<PImage> images, int actionPeriod) {
+        super(id, position, images);
         this.actionPeriod = actionPeriod;
     }
 

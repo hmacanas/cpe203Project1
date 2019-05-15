@@ -8,8 +8,8 @@ final class Ore_Blob extends AnimationEntity implements Schedulable
     private final int actionPeriod;
     private final int animationPeriod;
 
-    public Ore_Blob(String id, Point position, List<PImage> images, int imageIndex, int actionPeriod, int animationPeriod) {
-        super(id, position, images, imageIndex);
+    public Ore_Blob(String id, Point position, List<PImage> images, int actionPeriod, int animationPeriod) {
+        super(id, position, images);
         this.actionPeriod = actionPeriod;
         this.animationPeriod = animationPeriod;
     }

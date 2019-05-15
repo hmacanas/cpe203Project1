@@ -8,8 +8,8 @@ final class Vein extends ActivityEntity implements Schedulable
 
     private final int actionPeriod;
 
-    public Vein(String id, Point position, List<PImage> images, int imageIndex, int actionPeriod) {
-        super(id, position, images, imageIndex);
+    public Vein(String id, Point position, List<PImage> images, int actionPeriod) {
+        super(id, position, images);
         this.actionPeriod = actionPeriod;
     }
 

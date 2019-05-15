@@ -11,7 +11,7 @@ final class Miner_Full extends AnimationEntity implements Schedulable {
     private final int animationPeriod;
 
     public Miner_Full(String id, Point position, List<PImage> images, int imageIndex, int resourceLimit, int actionPeriod, int animationPeriod) {
-        super(id, position, images, imageIndex);
+        super(id, position, images);
         this.resourceLimit = resourceLimit;
         this.actionPeriod = actionPeriod;
         this.animationPeriod = animationPeriod;

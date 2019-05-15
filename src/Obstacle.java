@@ -33,9 +33,4 @@ final class Obstacle extends Entity
 
         return newPos;
     }
-
-    public void nextImage()
-    {
-        super.setImageIndex((super.getImageIndex() + 1) % super.getImages().size());
-    }
 }
