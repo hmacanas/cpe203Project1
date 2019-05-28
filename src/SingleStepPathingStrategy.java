@@ -23,7 +23,7 @@ public class SingleStepPathingStrategy
                                 && !pt.equals(end)
                                 && Math.abs(end.x - pt.x) <= Math.abs(end.x - start.x)
                                 && Math.abs(end.y - pt.y) <= Math.abs(end.y - start.y))
-                .limit(1)
+                //.limit(1)
                 .collect(Collectors.toList());
     }
 }
