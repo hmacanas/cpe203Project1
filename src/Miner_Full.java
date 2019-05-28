@@ -13,31 +13,8 @@ final class Miner_Full extends AnimationEntity implements Schedulable {
         this.resourceLimit = resourceLimit;
     }
 
-    public Point nextPositionOreBlob(WorldModel world,
-                                     Point destPos) {
-        int horiz = Integer.signum(destPos.x - super.getPosition().x);
-        Point newPos = new Point(super.getPosition().x + horiz,
-                super.getPosition().y);
-
-        Optional<Entity> occupant = world.getOccupant(newPos);
-
-        if (horiz == 0 ||
-                (occupant.isPresent() && !(occupant.get().getClass() == Ore.class))) {
-            int vert = Integer.signum(destPos.y - super.getPosition().y);
-            newPos = new Point(super.getPosition().x, super.getPosition().y + vert);
-            occupant = world.getOccupant(newPos);
-
-            if (vert == 0 ||
-                    (occupant.isPresent() && !(occupant.get().getClass() == Ore.class))) {
-                newPos = super.getPosition();
-            }
-        }
-
-        return newPos;
-    }
-
-    public Point nextPositionMiner(WorldModel world,
-                                   Point destPos) {
+    public Point nextPositionMiner(WorldModel world, Point destPos)
+    {
         int horiz = Integer.signum(destPos.x - super.getPosition().x);
         Point newPos = new Point(super.getPosition().x + horiz,
                 super.getPosition().y);
