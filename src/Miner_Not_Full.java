@@ -32,8 +32,10 @@ final class Miner_Not_Full extends AnimationEntity implements Schedulable
 
 
         List<Point> l = pathingStrategy.computePath(start, end, canPassThrough, withinReach, PathingStrategy.CARDINAL_NEIGHBORS);//.get(0);
+
         if(l.isEmpty())
             return super.getPosition();
+
         return l.get(0);
 
 //        int horiz = Integer.signum(destPos.x - super.getPosition().x);

@@ -67,7 +67,7 @@ final class Ore_Blob extends AnimationEntity implements Schedulable
                                        ImageStore imageStore, EventScheduler scheduler)
     {
         Optional<Entity> blobTarget = world.findNearest(
-                super.getPosition(), Ore.class);
+                super.getPosition(), Vein.class);
         long nextPeriod = super.getActionPeriod();
 
         if (blobTarget.isPresent())

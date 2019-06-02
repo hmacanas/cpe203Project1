@@ -35,6 +35,4 @@ public abstract class ActivityEntity extends Entity
                 this.createActivityAction(world, imageStore),
                 this.getActionPeriod());
     }
-
-
 }
