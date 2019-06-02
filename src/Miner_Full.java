@@ -19,48 +19,14 @@ final class Miner_Full extends AnimationEntity implements Schedulable {
 
     public Point nextPositionMiner(WorldModel world, Point destPos)
     {
-        // every entity should have a variable called pathing strategy
-        // pathing strategy.computePath()
-        // lab or project may be pushed back to saturday
-
-
-        Point start = super.getPosition();
-        Point end = destPos;
-        Point command;
-
         Predicate<Point> canPassThrough = (pt) -> !world.isOccupied(pt);
+        BiPredicate<Point, Point> withinReach = Point::adjacent;
+        List<Point> l = pathingStrategy.computePath(super.getPosition(), destPos, canPassThrough, withinReach, PathingStrategy.CARDINAL_NEIGHBORS);
 
-
-        // within reach means, condition to stop search and satisfy
-        BiPredicate<Point, Point> withinReach = (pt1, pt2) -> Math.abs((pt1.x - pt2.x)) <= 1 || Math.abs((pt1.y - pt2.y)) <= 1;
-
-
-        List<Point> l = pathingStrategy.computePath(start, end, canPassThrough, (p1, p2) -> Functions.neighbors(p1,p2), PathingStrategy.CARDINAL_NEIGHBORS);//.get(0);
         if(l.isEmpty())
             return super.getPosition();
 
         return l.get(0);
-
-//        if (command.equals(end))
-//            return start;
-//        else
-//            return command;
-
-//        int horiz = Integer.signum(destPos.x - super.getPosition().x);
-//        Point newPos = new Point(super.getPosition().x + horiz,
-//                super.getPosition().y);
-//
-//        if (horiz == 0 || world.isOccupied(newPos)) {
-//            int vert = Integer.signum(destPos.y - super.getPosition().y);
-//            newPos = new Point(super.getPosition().x,
-//                    super.getPosition().y + vert);
-//
-//            if (vert == 0 || world.isOccupied(newPos)) {
-//                newPos = super.getPosition();
-//            }
-//        }
-//
-//        return newPos;
     }
 
     public boolean moveToFull(WorldModel world,

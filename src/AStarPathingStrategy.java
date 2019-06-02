@@ -39,13 +39,15 @@ class AStarPathingStrategy
         myQ.add(startNode);
 
         Node currentNode = null;
+        int count = 0;
         while (!myQ.isEmpty())
         {
+            count += 1;
             currentNode = myQ.poll();
             closedSet.put(currentNode.getPoint(), currentNode);
             openSet.remove(currentNode.getPoint());
 
-            if (withinReach.test(currentNode.getPoint(), endNode.getPoint()))
+            if (withinReach.test(currentNode.getPoint(), endNode.getPoint()) || count > 10000)
                 break;
 
 
