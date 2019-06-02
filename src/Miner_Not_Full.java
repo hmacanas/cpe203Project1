@@ -9,12 +9,14 @@ final class Miner_Not_Full extends AnimationEntity implements Schedulable
 {
     private final int resourceLimit;
     private int resourceCount;
-    private final SingleStepPathingStrategy pathingStrategy;
+    private final PathingStrategy pathingStrategy;
+
 
     public Miner_Not_Full(String id, Point position, List<PImage> images, int resourceLimit, int actionPeriod, int animationPeriod) {
         super(id, position, images, actionPeriod, animationPeriod);
         this.resourceLimit = resourceLimit;
-        this.pathingStrategy = new SingleStepPathingStrategy();
+//        this.pathingStrategy = new SingleStepPathingStrategy();
+        this.pathingStrategy = new AStarPathingStrategy();
     }
 
     public Point nextPositionMiner(WorldModel world,
@@ -31,7 +33,7 @@ final class Miner_Not_Full extends AnimationEntity implements Schedulable
         BiPredicate<Point, Point> withinReach = (pt1, pt2) -> Math.abs((pt1.x - pt2.x)) <= 1 || Math.abs((pt1.y - pt2.y)) <= 1;
 
 
-        List<Point> l = pathingStrategy.computePath(start, end, canPassThrough, withinReach, PathingStrategy.CARDINAL_NEIGHBORS);//.get(0);
+        List<Point> l = pathingStrategy.computePath(start, end, canPassThrough, (p1, p2) -> Functions.neighbors(p1,p2), PathingStrategy.CARDINAL_NEIGHBORS);
 
         if(l.isEmpty())
             return super.getPosition();
