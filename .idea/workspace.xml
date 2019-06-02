@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5232f54b-fbaa-435e-8d3c-721809adff89" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/AStarPathingStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AStarPathingStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Functions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Functions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Miner_Full.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Miner_Full.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Miner_Not_Full.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Miner_Not_Full.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PathingStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PathingStrategy.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,19 +20,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Node.java">
+        <entry file="file://$PROJECT_DIR$/src/AStarPathingStrategy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="37" column="45" lean-forward="true" selection-start-line="37" selection-start-column="45" selection-end-line="37" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Miner_Full.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="37" column="118" selection-start-line="37" selection-start-column="80" selection-end-line="37" selection-end-column="118" />
+            <state relative-caret-position="217">
+              <caret line="43" column="9" lean-forward="true" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -40,11 +31,32 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/lang/Object.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="164">
+              <caret line="335" column="75" lean-forward="true" selection-start-line="335" selection-start-column="75" selection-end-line="335" selection-end-column="75" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Miner_Full.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="23" column="127" selection-start-line="23" selection-start-column="127" selection-end-line="23" selection-end-column="127" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Miner_Not_Full.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+            <state relative-caret-position="208">
+              <caret line="26" column="127" selection-start-line="26" selection-start-column="127" selection-end-line="26" selection-end-column="127" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -55,8 +67,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Functions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="780">
-              <caret line="154" column="22" lean-forward="true" selection-start-line="154" selection-start-column="22" selection-end-line="154" selection-end-column="22" />
+            <state relative-caret-position="425">
+              <caret line="147" column="10" lean-forward="true" selection-start-line="147" selection-start-column="10" selection-end-line="147" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Ore_Blob.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -74,214 +98,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Ore_Blob.java">
+        <entry file="file://$PROJECT_DIR$/src/PathingStrategy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="uml://JAVA/">
-          <provider selected="true" editor-type-id="UmlEditorProvider">
-            <state>
-              <ID>JAVA</ID>
-              <OriginalElement />
-              <nodes>
-                <node x="318.0" y="3576.0">com</node>
-                <node x="758.75" y="1414.0">Entity</node>
-                <node x="1958.0" y="2481.0">Activity</node>
-                <node x="0.0" y="3505.0">toolbarButtonGraphics</node>
-                <node x="2369.0" y="3291.0">EventComparator</node>
-                <node x="1668.5446428571431" y="1920.0">AnimationEntity</node>
-                <node x="528.0" y="3505.0">groovyjarjarasm</node>
-                <node x="0.0" y="3576.0">java</node>
-                <node x="2454.0" y="3505.0">javax</node>
-                <node x="1935.0" y="3505.0">javafx</node>
-                <node x="910.0" y="2212.5">Quake</node>
-                <node x="455.0" y="2223.5">Vein</node>
-                <node x="2108.0" y="3505.0">oracle</node>
-                <node x="1812.0" y="3291.0">Background</node>
-                <node x="1755.0" y="3505.0">mozilla</node>
-                <node x="1383.0" y="2168.0">Miner_Full</node>
-                <node x="2327.0" y="2201.5">Ore_Blob</node>
-                <node x="995.4196428571431" y="1964.5">Schedulable</node>
-                <node x="1381.0" y="3505.0">META-INF</node>
-                <node x="2281.0" y="3505.0">groovy</node>
-                <node x="986.0" y="3505.0">processing</node>
-                <node x="2621.0" y="3291.0">groovyjarjarcommonscli</node>
-                <node x="278.0" y="3505.0">groovyjarjarantlr</node>
-                <node x="764.0" y="3505.0">japplemenubar</node>
-                <node x="1838.0" y="2157.0">Miner_Not_Full</node>
-                <node x="1568.0" y="3505.0">netscape</node>
-                <node x="1813.0" y="2383.0">Action</node>
-                <node x="810.25" y="1777.5">Obstacle</node>
-                <node x="932.25" y="1777.5">Blacksmith</node>
-                <node x="0.0" y="2223.5">Ore</node>
-                <node x="0.0" y="2383.0">VirtualWorld</node>
-                <node x="159.0" y="3576.0">icon</node>
-                <node x="488.0" y="2383.0">WorldModel</node>
-                <node x="791.0" y="3412.0">AStarPathingStrategy</node>
-                <node x="470.0" y="3576.0">sun</node>
-                <node x="2273.0" y="2383.0">EventScheduler</node>
-                <node x="2062.0" y="3291.0">ImageStore</node>
-                <node x="0.0" y="3412.0">SingleStepPathingStrategy</node>
-                <node x="2620.0" y="3505.0">apple</node>
-                <node x="2786.0" y="3505.0">junit</node>
-                <node x="337.25" y="1711.0">ActivityEntity</node>
-                <node x="395.5" y="3291.0">PathingStrategy</node>
-                <node x="622.0" y="3576.0">org</node>
-                <node x="2739.0" y="2383.0">WorldView</node>
-                <node x="1385.0" y="2383.0">Viewport</node>
-                <node x="1187.0" y="3505.0">resources</node>
-                <node x="0.0" y="0.0">Functions</node>
-                <node x="875.0" y="2383.0">Point</node>
-                <node x="774.0" y="3576.0">jdk</node>
-                <node x="1607.0" y="3291.0">Event</node>
-                <node x="1668.0" y="2503.0">Animation</node>
-              </nodes>
-              <notes />
-              <edges>
-                <edge source="Vein" target="ActivityEntity">
-                  <point x="-108.75" y="-24.0" />
-                  <point x="0.0" y="79.5" />
-                </edge>
-                <edge source="Vein" target="Schedulable">
-                  <point x="108.75" y="-24.0" />
-                  <point x="781.25" y="2127.0" />
-                  <point x="1108.6696428571431" y="2127.0" />
-                  <point x="-113.25" y="24.0" />
-                </edge>
-                <edge source="Ore" target="ActivityEntity">
-                  <point x="-108.75" y="-24.0" />
-                  <point x="108.75" y="1895.0" />
-                  <point x="412.75" y="1895.0" />
-                  <point x="-151.0" y="79.5" />
-                </edge>
-                <edge source="Miner_Not_Full" target="AnimationEntity">
-                  <point x="117.25" y="-90.5" />
-                  <point x="2189.75" y="2097.0" />
-                  <point x="1951.6696428571431" y="2097.0" />
-                  <point x="56.625" y="68.5" />
-                </edge>
-                <edge source="Miner_Full" target="AnimationEntity">
-                  <point x="108.75" y="-79.5" />
-                  <point x="1709.25" y="2137.0" />
-                  <point x="1838.4196428571431" y="2137.0" />
-                  <point x="-56.625" y="68.5" />
-                </edge>
-                <edge source="AStarPathingStrategy" target="PathingStrategy">
-                  <point x="0.0" y="-24.0" />
-                  <point x="1176.5" y="3387.0" />
-                  <point x="973.75" y="3387.0" />
-                  <point x="192.75" y="35.5" />
-                </edge>
-                <edge source="Obstacle" target="Entity">
-                  <point x="0.0" y="-13.0" />
-                  <point x="0.0" y="123.5" />
-                </edge>
-                <edge source="Quake" target="Schedulable">
-                  <point x="-113.25" y="-35.0" />
-                  <point x="1023.25" y="2137.0" />
-                  <point x="1184.1696428571431" y="2137.0" />
-                  <point x="-37.75" y="24.0" />
-                </edge>
-                <edge source="Animation" target="Action">
-                  <point x="0.0" y="-68.5" />
-                  <point x="1803.0" y="2456.0" />
-                  <point x="1880.5" y="2456.0" />
-                  <point x="-67.5" y="24.0" />
-                </edge>
-                <edge source="Ore_Blob" target="AnimationEntity">
-                  <point x="108.75" y="-46.0" />
-                  <point x="2653.25" y="2077.0" />
-                  <point x="2064.919642857143" y="2077.0" />
-                  <point x="169.875" y="68.5" />
-                </edge>
-                <edge source="Ore" target="Schedulable">
-                  <point x="108.75" y="-24.0" />
-                  <point x="326.25" y="2117.0" />
-                  <point x="1033.1696428571431" y="2117.0" />
-                  <point x="-188.75" y="24.0" />
-                </edge>
-                <edge source="SingleStepPathingStrategy" target="PathingStrategy">
-                  <point x="0.0" y="-24.0" />
-                  <point x="385.5" y="3387.0" />
-                  <point x="588.25" y="3387.0" />
-                  <point x="-192.75" y="35.5" />
-                </edge>
-                <edge source="Miner_Not_Full" target="Schedulable">
-                  <point x="-117.25" y="-90.5" />
-                  <point x="1955.25" y="2107.0" />
-                  <point x="1335.1696428571431" y="2107.0" />
-                  <point x="113.25" y="24.0" />
-                </edge>
-                <edge source="Miner_Full" target="Schedulable">
-                  <point x="-108.75" y="-79.5" />
-                  <point x="1491.75" y="2117.0" />
-                  <point x="1259.6696428571431" y="2117.0" />
-                  <point x="37.75" y="24.0" />
-                </edge>
-                <edge source="ActivityEntity" target="Entity">
-                  <point x="0.0" y="-79.5" />
-                  <point x="563.75" y="1686.0" />
-                  <point x="792.9166666666665" y="1686.0" />
-                  <point x="-68.33333333333337" y="123.5" />
-                </edge>
-                <edge source="AnimationEntity" target="ActivityEntity">
-                  <point x="0.0" y="-68.5" />
-                  <point x="1895.0446428571431" y="1895.0" />
-                  <point x="714.75" y="1895.0" />
-                  <point x="151.0" y="79.5" />
-                </edge>
-                <edge source="Quake" target="AnimationEntity">
-                  <point x="113.25" y="-35.0" />
-                  <point x="1249.75" y="2127.0" />
-                  <point x="1725.1696428571431" y="2127.0" />
-                  <point x="-169.875" y="68.5" />
-                </edge>
-                <edge source="Ore_Blob" target="Schedulable">
-                  <point x="-108.75" y="-46.0" />
-                  <point x="2435.75" y="2087.0" />
-                  <point x="1410.6696428571431" y="2087.0" />
-                  <point x="188.75" y="24.0" />
-                </edge>
-                <edge source="Blacksmith" target="Entity">
-                  <point x="0.0" y="-13.0" />
-                  <point x="990.25" y="1686.0" />
-                  <point x="929.5833333333333" y="1686.0" />
-                  <point x="68.33333333333326" y="123.5" />
-                </edge>
-                <edge source="Activity" target="Action">
-                  <point x="0.0" y="-90.5" />
-                  <point x="2093.0" y="2456.0" />
-                  <point x="2015.5" y="2456.0" />
-                  <point x="67.5" y="24.0" />
-                </edge>
-              </edges>
-              <settings layout="Hierarchic Group" zoom="0.13252346769740472" x="1465.0" y="1801.0000000000005" />
-              <SelectedNodes>
-                <node>com</node>
-              </SelectedNodes>
-              <Categories>
-                <Category>Fields</Category>
-                <Category>Methods</Category>
-              </Categories>
-              <SCOPE>All</SCOPE>
-              <VISIBILITY>private</VISIBILITY>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AnimationEntity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+            <state relative-caret-position="435">
+              <caret line="29" column="43" lean-forward="true" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -292,7 +112,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/Library/Containers/com.apple.mail/Data/Library/Mail Downloads/51A165C9-3D2D-468E-8CAC-5E61C623F13B/AStarPathingStrategy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
+            <state relative-caret-position="42">
               <caret line="34" column="58" selection-start-line="34" selection-start-column="58" selection-end-line="34" selection-end-column="58" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -304,7 +124,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Point.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
+            <state relative-caret-position="-1360">
               <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -395,16 +215,16 @@
         <option value="$PROJECT_DIR$/src/Quake.java" />
         <option value="$PROJECT_DIR$/src/Schedulable.java" />
         <option value="$PROJECT_DIR$/src/Entity.java" />
-        <option value="$PROJECT_DIR$/src/PathingStrategy.java" />
         <option value="$PROJECT_DIR$/src/SingleStepPathingStrategy.java" />
         <option value="$PROJECT_DIR$/src/ActivityEntity.java" />
         <option value="$PROJECT_DIR$/src/AstarPathingStrategy.java" />
         <option value="$PROJECT_DIR$/src/Ore_Blob.java" />
-        <option value="$PROJECT_DIR$/src/AStarPathingStrategy.java" />
         <option value="$PROJECT_DIR$/src/Activity.java" />
+        <option value="$PROJECT_DIR$/src/PathingStrategy.java" />
         <option value="$PROJECT_DIR$/src/Functions.java" />
-        <option value="$PROJECT_DIR$/src/Miner_Full.java" />
+        <option value="$PROJECT_DIR$/src/AStarPathingStrategy.java" />
         <option value="$PROJECT_DIR$/src/Miner_Not_Full.java" />
+        <option value="$PROJECT_DIR$/src/Miner_Full.java" />
       </list>
     </option>
   </component>
@@ -509,7 +329,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43787000" />
+    <option name="totallyTimeSpent" value="46456000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -525,7 +345,7 @@
     <editor active="true" />
     <layout>
       <window_info anchor="top" id="simpleUML" internal_type="SLIDING" order="0" side_tool="true" type="SLIDING" weight="0.32967034" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13125764" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13125764" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -534,8 +354,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32857144" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4993895" visible="true" weight="0.27040815" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.50306123" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4993895" visible="true" weight="0.27040815" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.32040817" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32959184" />
@@ -635,26 +455,7 @@
     <MESSAGE value="initial commit, no alterations" />
     <option name="LAST_COMMIT_MESSAGE" value="initial commit, no alterations" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Ore_Blob.java</url>
-          <line>16</line>
-          <properties />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Background.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Event.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -901,16 +702,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$USER_HOME$/Downloads/AStarTesting-20190530/Point.java" />
-    <entry file="file://$PROJECT_DIR$/src/PathingStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="66" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="66" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Library/Containers/com.apple.mail/Data/Library/Mail Downloads/8FE5C124-D539-4223-9AEB-C019DD552519/AStarPathingStrategy.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-170">
@@ -956,16 +747,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AStarPathingStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="54" lean-forward="true" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Ore.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -989,26 +770,6 @@
             <element signature="e#595#596#0" expanded="true" />
             <element signature="e#658#659#0" expanded="true" />
             <element signature="e#711#712#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SingleStepPathingStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="3" selection-start-line="25" selection-start-column="3" selection-end-line="25" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ore_Blob.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1215,18 +976,8 @@
     </entry>
     <entry file="file://$USER_HOME$/Library/Containers/com.apple.mail/Data/Library/Mail Downloads/51A165C9-3D2D-468E-8CAC-5E61C623F13B/AStarPathingStrategy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
+        <state relative-caret-position="42">
           <caret line="34" column="58" selection-start-line="34" selection-start-column="58" selection-end-line="34" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Point.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1240,17 +991,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Functions.java">
+    <entry file="file://$PROJECT_DIR$/src/SingleStepPathingStrategy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="154" column="22" lean-forward="true" selection-start-line="154" selection-start-column="22" selection-end-line="154" selection-end-column="22" />
+        <state relative-caret-position="375">
+          <caret line="25" column="3" selection-start-line="25" selection-start-column="3" selection-end-line="25" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Miner_Full.java">
+    <entry file="file://$PROJECT_DIR$/src/Ore_Blob.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="37" column="118" selection-start-line="37" selection-start-column="80" selection-end-line="37" selection-end-column="118" />
+        <state relative-caret-position="153">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/lang/Object.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="335" column="75" lean-forward="true" selection-start-line="335" selection-start-column="75" selection-end-line="335" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Functions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="147" column="10" lean-forward="true" selection-start-line="147" selection-start-column="10" selection-end-line="147" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Point.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1360">
+          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PathingStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="43" lean-forward="true" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AStarPathingStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="43" column="9" lean-forward="true" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1259,8 +1057,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Miner_Not_Full.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+        <state relative-caret-position="208">
+          <caret line="26" column="127" selection-start-line="26" selection-start-column="127" selection-end-line="26" selection-end-column="127" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Miner_Full.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="127" selection-start-line="23" selection-start-column="127" selection-end-line="23" selection-end-column="127" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
